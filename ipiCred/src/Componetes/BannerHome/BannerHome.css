@@ -1,7 +1,7 @@
-/* BannerHome.css */
+
 
 #home {
-    margin-top: 70px; /* Ajuste conforme a altura do cabeçalho */
+    margin-top: 70px; 
 }
 
 .text-container {
@@ -22,7 +22,7 @@
     border: 1px solid #976A0F;
     border-radius: 15px;
     position: absolute;
-    width: 450px; /* Ajuste o tamanho conforme necessário */
+    width: 450px; 
     height: 100%;
     top: 5px;
     left: 10px;
@@ -35,14 +35,14 @@
 
 .textCaixa {
     width: 200px;
-    height: 30px; /* Aumente a altura para melhor alinhamento vertical */
+    height: 30px;
     font-size: 13px;
     color: #fff;
     background-color: #5F4B23;
-    border-radius: 10px; /* Use 10px para bordas arredondadas mais uniformes */
+    border-radius: 10px; 
     display: flex;
-    align-items: center; /* Alinha verticalmente o conteúdo ao centro */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; 
+    justify-content: center; 
 }
 
 .textBaner {
