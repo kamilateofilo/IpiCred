@@ -1,0 +1,63 @@
+/* BannerHome.css */
+
+#home {
+    margin-top: 70px; /* Ajuste conforme a altura do cabeçalho */
+}
+
+.text-container {
+    padding: 20px;
+}
+
+.img-fluid {
+    width: 450px;
+    top: 18px;
+    left:20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.container-background {
+    border: 1px solid #976A0F;
+    border-radius: 15px;
+    position: absolute;
+    width: 450px; /* Ajuste o tamanho conforme necessário */
+    height: 100%;
+    top: 5px;
+    left: 10px;
+    z-index: 1;
+}
+
+.container-wrapper {
+    position: relative;
+}
+
+.textCaixa {
+    width: 200px;
+    height: 30px; /* Aumente a altura para melhor alinhamento vertical */
+    font-size: 13px;
+    color: #fff;
+    background-color: #5F4B23;
+    border-radius: 10px; /* Use 10px para bordas arredondadas mais uniformes */
+    display: flex;
+    align-items: center; /* Alinha verticalmente o conteúdo ao centro */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.textBaner {
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 50px;
+    color: #5F4B23;
+}
+
+.spanBanner {
+    color: #AC883F;
+}
+
+.text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5F4B23;
+}
