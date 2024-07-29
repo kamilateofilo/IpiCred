@@ -1,10 +1,13 @@
+import { ContactForm } from './Pages/ContactForm/ContactForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
-  return (
-    <>
-      <h1>IpiCred</h1>
-    </>
-  );
+    return(
+        <>
+           <ContactForm/>
+        </>
+    )
 }
 
-export default App
+export default App;

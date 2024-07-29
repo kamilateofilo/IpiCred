@@ -1,0 +1,19 @@
+.container {
+    margin: 5px;
+} 
+
+.back-button {
+    position: absolute;
+    top: 16%;
+}
+
+.arrow-left {
+    margin-right: 5px;
+}
+
+.link {
+    color: #848587;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+}

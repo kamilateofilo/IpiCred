@@ -1,0 +1,19 @@
+.header {
+    background-color: #f8f9fa;
+  }
+  
+.navbar-brand {
+    font-weight: bold;
+  }
+
+.logo {
+    letter-spacing: 5px;
+  }
+  
+
+.custom-nav-link {
+    color: #232528;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 10px;
+  }
