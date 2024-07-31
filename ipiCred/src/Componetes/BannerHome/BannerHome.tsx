@@ -11,9 +11,17 @@ import {
   Btn
 } from './BannerHomeStyles'; // Importe os estilos
 
+import { useNavigate } from 'react-router-dom';
 import banner from '../../assets/banner.jpg';
 
 const BannerHome = () => {
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/contactForm');
+  };
+
   return (
     <HomeSection id="home">
       <div className="container" style={{ backgroundColor: '#FFF' }}>
@@ -31,7 +39,7 @@ const BannerHome = () => {
                 <Text>
                   Cadastre, simule e solicite crédito para seus cooperados sem sair da propriedade. Bancarize sua cooperativa e tenha assessoria técnica sempre que precisar, tudo direto na nossa plataforma.
                 </Text>
-                <Btn type="button">Saiba mais</Btn>
+                <Btn onClick={handleButtonClick} type="button">Saiba mais</Btn>
               </TextContainer>
             </TextContainer>
           </div>

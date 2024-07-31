@@ -7,9 +7,17 @@ import {
   Column
 } from './PlataformaHomeStyles';
 
+import { useNavigate } from 'react-router-dom';
 import Plataforma from '../../assets/plataforma.png';
 
 const PlataformaHome = () => {
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/contactForm');
+  };
+
   return (
     <Section id="home">
       <Container className="container">
@@ -34,7 +42,7 @@ const PlataformaHome = () => {
                 </p>
               </div>
 
-              <button type="button" className="btn">Obtenha financiamento</button>
+              <button onClick={handleButtonClick } type="button" className="btn">Obtenha financiamento</button>
             </TextContainer>
           </Column>
         </div>
