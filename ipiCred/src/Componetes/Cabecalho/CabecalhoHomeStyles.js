@@ -78,7 +78,7 @@ export const Btn = styled.button`
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
-  white-space: nowrap; // Prevent breaking into a new line
+  white-space: nowrap; 
 
   @media (max-width: 768px) {
     margin-left: 10px;
