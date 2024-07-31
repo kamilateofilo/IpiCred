@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const HomeSection = styled.section`
-  margin-top: 70px;
-  padding-top: 5rem;
+  margin-top: 40px;
+  padding-top: 15px;
   margin-top: 5rem;
 `;
 
