@@ -1,12 +1,10 @@
-import Home from "./Pages/Home/Home";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <>
-      <Home />
+      <h1>IpiCred</h1>
     </>
   );
 }
 
-export default App
+export default App;
