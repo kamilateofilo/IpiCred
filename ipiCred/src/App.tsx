@@ -5,9 +5,6 @@ function App() {
   return (
     <>
       <Home />
-      <main>
-        <h1>Conteúdo da página vai aqui.</h1>
-      </main>
     </>
   );
 }
