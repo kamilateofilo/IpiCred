@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../CooperativeResponsibleForm/styled';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import IconeWhatsapp from "../../assets/images/whatsapp_symbol.png.png";
 import ModalImage from "../../assets/images/modal-image.png"
@@ -9,6 +10,11 @@ function ModalButton() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const navigate = useNavigate();
+    const handleButtonClick = () => {
+    navigate('/');
+  };
 
     return (
         <>
@@ -37,7 +43,7 @@ function ModalButton() {
                 <Modal.Footer>
                     <button
                         style={{backgroundColor: "#ffffff", color: "#221F1F", fontWeight: "600", fontSize: "14px", width: "100%", borderRadius: "50px", border: "1px solid #787878", padding: "15px", margin: "10px" }}
-                        onClick={handleClose}
+                        onClick={handleButtonClick}
                     >
                         Voltar para o site 
                     </button>

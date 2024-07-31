@@ -5,7 +5,7 @@ import { StepsNumber } from "../../styles/StepsNumber";
 import { Button } from "../../Componetes/CooperativeResponsibleForm/styled";
 
 import Cabecalho  from "../../Componetes/Cabecalho/Cabecalho";
-import BackButton from "../../Componetes/BackButton/BackButton";
+import BackButton from "../../Componetes/BackButton/BackButtonResponsibleForm";
 import MultiStepsForm from "../../Componetes/MultiStepsForm/MultiStepsForm";
 import ProgressBar from "../../Componetes/ProgressBar/ProgressBar";
 

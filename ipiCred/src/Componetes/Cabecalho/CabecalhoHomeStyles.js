@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Link, Link as RouterLink } from 'react-router-dom';
+
 
 export const Header = styled.header`
   background-color: #f8f9fa;
@@ -48,18 +51,21 @@ export const NavLink = styled.a`
   font-size: 15px;
   font-weight: 500;
 
-  &:hover {
-    color: #000;
-  }
 
   @media (max-width: 768px) {
     margin-right: 10px;
   }
 `;
 
-export const CustomNavLink = styled(NavLink)`
+export const StyledLink = styled(Link)`
   color: #AC883F;
+  text-decoration: none;
+  cursor: pointer;
   font-weight: bold;
+
+   &:hover {
+    color: #000;
+  }
 `;
 
 export const Separator = styled.span`
