@@ -10,7 +10,12 @@ export const Input = styled.input`
   padding: 10px;
   width: 100%;
   height: 50px;
-
+  
+  &::-webkit-inner-spin-button, 
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   &::placeholder {
     color: #49454F;

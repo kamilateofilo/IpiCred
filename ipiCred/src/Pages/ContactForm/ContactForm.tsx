@@ -1,10 +1,12 @@
-import { MultiStepsForm } from "../../Componetes/MultiStepsForm/MultiStepsForm";
-import Cabecalho  from "../../Componetes/Cabecalho/Cabecalho";
-import BackButton from "../../Componetes/BackButton/BackButton";
+
 import { CooperativeResponsibleForm } from "../../Componetes/CooperativeResponsibleForm/CooperativeResponsibleForm";
 import { CooperativeForm } from "../../Componetes/CooperativeForm/CooperativeForm";
-import { StepsNumber } from "./styled";
-import { Button } from "../../Componetes/CooperativeResponsibleForm/styled"
+import { StepsNumber } from "../../styles/StepsNumber";
+import { Button } from "../../Componetes/CooperativeResponsibleForm/styled";
+
+import Cabecalho  from "../../Componetes/Cabecalho/Cabecalho";
+import BackButton from "../../Componetes/BackButton/BackButton";
+import MultiStepsForm from "../../Componetes/MultiStepsForm/MultiStepsForm";
 import ProgressBar from "../../Componetes/ProgressBar/ProgressBar";
 
 
@@ -26,7 +28,7 @@ export const ContactForm = () => {
                    </StepsNumber>
                    <ProgressBar/>
                    {step}
-                   {currentStepIndex !== 1 && <Button type="button" onClick={next}>Continuar</Button> }
+                    {currentStepIndex !== 1 && <Button type="button" onClick={next}>Continuar</Button> }
                 </div>
             </form>
         </div>

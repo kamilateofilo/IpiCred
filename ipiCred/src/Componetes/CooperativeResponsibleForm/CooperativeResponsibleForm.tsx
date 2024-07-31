@@ -20,7 +20,7 @@ export const CooperativeResponsibleForm = () => {
                 />
 
                 <Input
-                type="text"
+                type="email"
                 placeholder="E-mail da cooperativa"
                 />
 

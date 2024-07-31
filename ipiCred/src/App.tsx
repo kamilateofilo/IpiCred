@@ -1,13 +1,8 @@
-import { ContactForm } from './Pages/ContactForm/ContactForm';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { AppRoutes } from "./Routes/index";
 
 function App() {
-    return(
-        <>
-           <ContactForm/>
-        </>
-    )
+  return <AppRoutes />;
 }
 
 export default App;
+
