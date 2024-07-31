@@ -22,7 +22,7 @@ import {
   
             <Column className="col-md-6">
               <TextContainer>
-                <p className="textBaner">
+                <p>
                 Facilite o acesso ao crédito rural para seus <span className='span'>cooperados</span> de forma <span className='span'>simples</span> e <span className='span'>eficiente</span>
                 </p>
   

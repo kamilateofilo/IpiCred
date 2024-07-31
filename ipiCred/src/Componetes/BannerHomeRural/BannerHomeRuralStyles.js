@@ -19,12 +19,10 @@ export const Image = styled.img`
 `;
 
 export const TextContainer = styled.div`
-  .textBanner {
-    color: #3F2409;
-    line-height: 1.2;
-    font-weight: 750;
-    font-size: 35px;
-  }
+  color: #3F2409;
+  line-height: 1.2;
+  font-weight: 750;
+  font-size: 35px;
 
   .span {
     color: #AC883F;
@@ -48,9 +46,8 @@ export const TextContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    .textBanner {
-      font-size: 28px;
-    }
+    color: #3F2409;
+    font-size: 28px;
 
     .text {
       font-size: 14px;

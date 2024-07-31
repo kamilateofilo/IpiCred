@@ -30,15 +30,30 @@ export const ContainerBackground = styled.div`
   border-radius: 15px;
   position: absolute;
   width: 480px;
-  height: 100%;
+  height: 350px;
   top: 5px;
   left: 15px;
   z-index: 1;
 
+  &.img1 {
+    left: 52px; 
+    top: 24px; 
+    width: 470px; 
+    height: 350px;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
+    max-width: 300px;
     height: auto;
-    left: 0;
+
+    &.img1 {
+      left: 0;
+      top: 0;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
   }
 `;
 
@@ -77,6 +92,10 @@ export const Text = styled.p`
   font-size: 18px;
   font-weight: 500;
   color: #5F4B23;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Btn = styled.button`
@@ -86,4 +105,10 @@ export const Btn = styled.button`
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 `;

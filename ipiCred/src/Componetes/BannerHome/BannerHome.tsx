@@ -39,7 +39,7 @@ const BannerHome = () => {
           <div className="col-md-6">
             <ContainerWrapper>
               <ContainerBackground />
-              <ContainerBackground style={{ left: '52px', top: '24px', width: '470px', height: '350px' }} />
+              <ContainerBackground className='img1'/>
               <ImgFluid src={banner} alt="Imagem Capa" />
             </ContainerWrapper>
           </div>

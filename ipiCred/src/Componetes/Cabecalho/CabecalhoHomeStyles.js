@@ -13,8 +13,14 @@ export const Navbar = styled.nav`
   top: 0;
   width: 100%;
   height: 70px;
-  padding-left: 10px;
+  padding: 0 10px;
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
 `;
 
 export const NavbarBrand = styled.a`
@@ -28,17 +34,26 @@ export const Logo = styled.img`
 export const Manifesto = styled.a`
   color: #3F2409;
   text-decoration: none;
+  margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-right: 10px;
+  }
 `;
 
 export const NavLink = styled.a`
   color: #3F2409;
   text-decoration: none;
-  margin-right: 5px;
+  margin-right: 20px;
   font-size: 15px;
   font-weight: 500;
 
   &:hover {
     color: #000;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 10px;
   }
 `;
 
@@ -49,6 +64,10 @@ export const CustomNavLink = styled(NavLink)`
 
 export const Separator = styled.span`
   margin: 0 5px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Btn = styled.button`
@@ -59,10 +78,12 @@ export const Btn = styled.button`
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
+  white-space: nowrap; // Prevent breaking into a new line
 
   @media (max-width: 768px) {
-    margin-left: 0;
-    margin-top: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 5px 8px;
   }
 `;
 
@@ -71,9 +92,12 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 `;
