@@ -32,10 +32,15 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   margin-top: 2em;
 
+  >h3 {
+    color: #232528CC;
+  }
+
   >p {
-   color: #232528;
+   color:  #79747E;
    font-weight: 400;
    font-size: 16px;
+   margin-bottom: 26px;
   }
 `;
 
