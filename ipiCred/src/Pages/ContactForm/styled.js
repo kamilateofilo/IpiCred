@@ -20,7 +20,6 @@ export const Form = styled.form`
     width: 100%;
     max-width: 600px;
     padding: 2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 8px;
     margin-top: 50px;

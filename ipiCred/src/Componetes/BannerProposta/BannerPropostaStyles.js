@@ -5,7 +5,7 @@ export const Card = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 90px;
   overflow: hidden;
-  height: 500px;
+  height: 550px;
 `;
 
 export const CardHeader = styled.div`
@@ -24,7 +24,7 @@ export const CardBody = styled.div`
 
 export const Image = styled.img`
   max-width: 500px;
-  height: 250px;
+  height: 300px;
   margin-bottom: 15px;
 `;
 
