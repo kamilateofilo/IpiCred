@@ -1,4 +1,5 @@
-
+import { LoginForm } from "../../Componetes/LoginForm/LoginForm";
+import { LoginBanner } from "../../Componetes/LoginBanner/LoginBanner";
 
 
 
@@ -6,7 +7,8 @@
 export const Login = () => {
     return(
         <>
-          <h1>Login page</h1>
+         <LoginBanner />
+          <LoginForm />
         </>
     );
 }
