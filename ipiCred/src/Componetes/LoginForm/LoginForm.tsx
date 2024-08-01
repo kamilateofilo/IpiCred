@@ -4,6 +4,7 @@ import { ChangeEvent, useState } from "react";
 
 import eyeIcon from "../../assets/images/eye-icon.png";
 import eyeOffIcon  from "../../assets/images/eye-closed-icon.png";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -18,6 +19,12 @@ export const LoginForm = () => {
 
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/HomeUsuario');
   };
   
     return (
@@ -51,7 +58,7 @@ export const LoginForm = () => {
             onClick={togglePasswordVisibility}
            />
 
-            <Button type="submit">Entrar</Button>
+            <Button onClick={handleButtonClick} type="submit">Entrar</Button>
           </Conteiner>  
         </Form>
     );
