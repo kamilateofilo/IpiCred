@@ -7,6 +7,8 @@ import HomeUsuario from '../Pages/HomeUsuario/HomeUsuario';
 import Home from '../Pages/Home/Home';
 import { Login } from '../Pages/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AreaCooperado from '../Pages/AreaCooperado/AreaCooperado';
+import Propostas from '../Pages/Propostas/Propostas';
 
 
 export const AppRoutes = () => {
@@ -18,6 +20,8 @@ export const AppRoutes = () => {
                 <Route path="/cooperativeResponsibleForm" element={<CooperativeResponsibleForm />} />
                 <Route path="/cooperativeForm" element={<CooperativeForm />} />
                 <Route path="/homeUsuario" element={<HomeUsuario />} />
+                <Route path="/AreaCooperado" element={<AreaCooperado />} />
+                <Route path="/Propostas" element={<Propostas />} />
           </Routes>
       );
 };

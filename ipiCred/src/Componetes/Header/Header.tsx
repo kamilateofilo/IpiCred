@@ -1,15 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
 import logo from '../../assets/logoIpi.png';
 import cooperado from '../../assets/cooperado.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { StyledNavbar } from './HeaderStyles';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState('Página Inicial');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState('');
 
-  const handleNavClick = (linkName: string) => {
+  useEffect(() => {
+    const path = location.pathname;
+    switch (path) {
+      case '/HomeUsuario':
+        setActiveLink('Página Inicial');
+        break;
+      case '/AreaCooperado':
+        setActiveLink('Área do Cooperado');
+        break;
+      case '/Propostas':
+        setActiveLink('Propostas');
+        break;
+      case '/simulador':
+        setActiveLink('Simulador');
+        break;
+      default:
+        setActiveLink('');
+    }
+  }, [location.pathname]);
+
+  const handleNavClick = (path, linkName) => {
     setActiveLink(linkName);
+    navigate(path);
   };
 
   return (
@@ -24,28 +48,28 @@ const Header = () => {
             <Button
               variant="light"
               className={activeLink === 'Página Inicial' ? 'active' : ''}
-              onClick={() => handleNavClick('Página Inicial')}
+              onClick={() => handleNavClick('/HomeUsuario', 'Página Inicial')}
             >
               Página Inicial
             </Button>
             <Button
               variant="light"
               className={activeLink === 'Área do Cooperado' ? 'active' : ''}
-              onClick={() => handleNavClick('Área do Cooperado')}
+              onClick={() => handleNavClick('/AreaCooperado', 'Área do Cooperado')}
             >
               Área do Cooperado
             </Button>
             <Button
               variant="light"
               className={activeLink === 'Propostas' ? 'active' : ''}
-              onClick={() => handleNavClick('Propostas')}
+              onClick={() => handleNavClick('/Propostas', 'Propostas')}
             >
               Propostas
             </Button>
             <Button
               variant="light"
               className={activeLink === 'Simulador' ? 'active' : ''}
-              onClick={() => handleNavClick('Simulador')}
+              onClick={() => handleNavClick('/simulador', 'Simulador')}
             >
               Simulador
             </Button>
