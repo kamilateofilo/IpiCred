@@ -9,7 +9,7 @@ import  ArrowOutward from "../../assets/images/arrow-outward.svg"
 const Cabecalho = () => {
   return (
     <header className="header">
-      <nav className="navbar fixed-top bg-body-tertiary">
+      <nav className="navbar fixed-top bg-body-tertiary" style={{height: '50px'}}>
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center">
             <a className="navbar-brand" href="#">

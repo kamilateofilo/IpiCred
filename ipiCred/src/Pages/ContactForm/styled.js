@@ -22,7 +22,7 @@ export const Form = styled.form`
     padding: 2em;
     background: #fff;
     border-radius: 8px;
-    margin-top: 50px;
+    margin-top: 20px;
 
     @media (max-width: 768px) {
         margin-top: 60px;
@@ -55,3 +55,7 @@ export const BackButtonStyled = styled.div`
     }
 `;
 
+export const StyledWrapper = styled.div`
+    margin-bottom: 200px;
+   
+`;

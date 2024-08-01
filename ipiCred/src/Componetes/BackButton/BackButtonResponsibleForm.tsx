@@ -8,6 +8,7 @@ const BackButtonResponsibleForm = () => {
             <LeftButton>
                 <StyledLink to="/" aria-label="Voltar">
                     <img src={ArrowLeft} alt="seta voltar" />
+                    Voltar
                 </StyledLink>
             </LeftButton>
         </Conteiner>

@@ -21,5 +21,6 @@ export const StyledLink = styled(Link)`
     font-weight: 600;
     text-decoration: none;
     font-size: 14px;
+    display: flex;
 `;
 
