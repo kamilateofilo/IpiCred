@@ -38,7 +38,7 @@ export const StyledNavbar = styled(Navbar)`
   }
 
   .dropdown-menu {
-    background-color: #F4EEE2;
+    background-color: #FFF;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border: none;
