@@ -9,7 +9,7 @@ export const Conteiner = styled.div`
 
 export const LeftButton = styled.div`
     position: absolute;
-    top: 16%;
+    top: 12%;
 
     >img {
         margin-right: 5px;
