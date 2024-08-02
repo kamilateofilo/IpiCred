@@ -1,15 +1,28 @@
 import styled from 'styled-components';
+import { StyledProps } from 'styled-components';
 
-export const ProgressWrapper = styled.div`
-    width: 100%;
-    background-color: #e0e0e0; 
-    border-radius: 8px;
-    overflow: hidden;
+interface StyledProps {
+    color?: string;
+    progress?: number;
+  }
+  
+
+export const ProgressContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
 `;
 
-export const ProgressBarStyled = styled.div`
-    width: ${props => props.progress}%;
-    background-color: #AC883F; 
-    height: 8px; 
-    transition: width 0.3s ease-in-out;
+export const ProgressBarWrapper = styled.div`
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 0.25rem;
+  height: 0.625rem;
+`;
+
+export const ProgressBarFill = styled.div<StyledProps>`
+  width: ${({ progress }) => progress}%;
+  background-color: #AC883F;
+  height: 0.625rem;
+  border-radius: 0.25rem;
 `;

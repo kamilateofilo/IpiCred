@@ -24,7 +24,7 @@ export const Button = styled.button`
   color: #ffffff;
   border: none;
   cursor: pointer;
-  margin: 10px;
+  margin-top: 2rem;
 `;
 
 export const TextWrapper = styled.div`
