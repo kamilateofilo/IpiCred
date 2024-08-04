@@ -1,4 +1,6 @@
-import styled  from "styled-components";
+
+import styled, { css } from 'styled-components';
+
 
 export const Form = styled.form`
     display: flex;
@@ -13,7 +15,15 @@ export const Form = styled.form`
     }
 `;
 
-export const Button = styled.button`
+const activeStyle = css`
+  background-color: #AC883F;
+`;
+
+const inactiveStyle = css`
+  background-color: #E4E4E4;
+`;
+
+export const Button = styled.button<{ isValid: boolean }>`
   width: 250px;
   padding: 15px;
   border-radius: 40px;
@@ -25,6 +35,8 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   margin-top: 2rem;
+
+  ${props => (props.isValid ? activeStyle : inactiveStyle)}
 `;
 
 export const TextWrapper = styled.div`

@@ -6,10 +6,16 @@ import IconeWhatsapp from "../../assets/images/whatsapp_symbol.png.png";
 import ModalImage from "../../assets/images/modal-image.png"
 
 
+
+
+
 function ModalButton() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [isFormValid] = useState<boolean>(false);
+
+
 
     const navigate = useNavigate();
     const handleButtonClick = () => {
@@ -19,6 +25,8 @@ function ModalButton() {
     return (
         <>
             <Button
+                type='button'
+                isValid={isFormValid} 
                 onClick={handleShow}
             >
                 <img style={{marginRight: "5px"}} src={IconeWhatsapp} alt="ícone whatsapp" />
