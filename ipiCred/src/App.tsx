@@ -1,10 +1,12 @@
 
+import { AppRoutes } from "./Routes/index";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 function App() {
-  return (
-    <>
-      <h1>IpiCred</h1>
-    </>
-  );
+  return <AppRoutes />;
 }
 
-export default App
+export default App;
+
