@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import { Button } from '../CooperativeResponsibleForm/styled';
+import { Button } from '../../Pages/ContactForm/styled';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import IconeWhatsapp from "../../assets/images/whatsapp_symbol.png.png";
 import ModalImage from "../../assets/images/modal-image.png"
-
-
-
 
 
 function ModalButton() {
@@ -14,8 +11,6 @@ function ModalButton() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [isFormValid] = useState<boolean>(false);
-
-
 
     const navigate = useNavigate();
     const handleButtonClick = () => {
@@ -25,7 +20,7 @@ function ModalButton() {
     return (
         <>
             <Button
-                type='button'
+                type='submit'
                 isValid={isFormValid} 
                 onClick={handleShow}
             >

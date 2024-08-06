@@ -16,11 +16,18 @@ export const LeftButton = styled.div`
     }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.span`
     color: #77787A;
     font-weight: 600;
     text-decoration: none;
     font-size: 14px;
     display: flex;
+    cursor: pointer;
+
+    @media (max-width: 600px) {
+        margin-bottom: 50px;
+        font-size: 14px;
+        color: #333;
+    }
 `;
 
