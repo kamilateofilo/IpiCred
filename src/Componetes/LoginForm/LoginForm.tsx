@@ -1,5 +1,5 @@
 import { Form, Input, Button, Conteiner, Icon, StyledLink } from "./styled";
-import { TextWrapper } from '../CooperativeResponsibleForm/styled';
+import { TextWrapper } from '../../Pages/ContactForm/styled';
 import { ChangeEvent, useState } from "react";
 
 import eyeIcon from "../../assets/images/eye-icon.png";
