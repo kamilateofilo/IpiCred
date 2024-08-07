@@ -12,7 +12,7 @@ export const LeftButton = styled.div`
     top: 12%;
 
     >img {
-        margin-right: 5px;
+        margin-right: 10px;
     }
 `;
 
