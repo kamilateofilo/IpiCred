@@ -1,4 +1,4 @@
-import { Title, Container, Image } from './BancosStyles'; // Importe os estilos
+import { Title, Container, Image } from './BancosStyles.ts'; 
 
 import BancoBrasil from '../../assets/bancoBB.png';
 import Caixa from '../../assets/bancoCaixa.png';

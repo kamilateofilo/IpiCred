@@ -1,4 +1,4 @@
-import { Background, ImgAspiral, ContainerPainel, CardGrid, CardPainel } from './PainelLinhasStyles'; // Importe os estilos
+import { Background, ImgAspiral, ContainerPainel, CardGrid, CardPainel } from './PainelLinhasStyles.ts'; 
 
 import Aspiral from '../../assets/aspiral.png';
 

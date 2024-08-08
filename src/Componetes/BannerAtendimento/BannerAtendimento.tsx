@@ -1,4 +1,4 @@
-import { Title, CardContainer, CustomCard, CardImage, TitleCard, TextCard } from './BannerAtendimentoStyles'; // Importe os estilos
+import { Title, CardContainer, CustomCard, CardImage, TitleCard, TextCard } from './BannerAtendimentoStyles.ts'; // Importe os estilos
 
 import Call from '../../assets/call.png';
 import Group from '../../assets/grupo.png';

@@ -3,13 +3,13 @@ import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
 import logo from '../../assets/logoIpi.png';
 import cooperado from '../../assets/cooperado.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { StyledNavbar } from './HeaderStyles';
+import { StyledNavbar } from './HeaderStyles.ts';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState<string>('');
 
   useEffect(() => {
     const path = location.pathname;
@@ -31,7 +31,8 @@ const Header = () => {
     }
   }, [location.pathname]);
 
-  const handleNavClick = (path, linkName) => {
+  // Tipagem explícita para os parâmetros
+  const handleNavClick = (path: string, linkName: string) => {
     setActiveLink(linkName);
     navigate(path);
   };

@@ -1,7 +1,7 @@
-import { FooterContainer, Column, Separator, Logo, SocialIcons, TextContent } from './FooterHomeStyles';
-import facebookIcon from '../../assets/facebook.png'; // Substitua com o caminho correto
-import instagramIcon from '../../assets/instagram.png'; // Substitua com o caminho correto
-import linkedinIcon from '../../assets/linkedin.png'; // Substitua com o caminho correto
+import { FooterContainer, Column, Separator, Logo, SocialIcons, TextContent } from './FooterHomeStyles.ts';
+import facebookIcon from '../../assets/facebook.png';
+import instagramIcon from '../../assets/instagram.png'; 
+import linkedinIcon from '../../assets/linkedin.png'; 
 import footer from '../../assets/footer.png';
 
 const Footer = () => {

@@ -1,5 +1,5 @@
 import Propostas from '../../assets/propostas.png';
-import { Card, CardHeader, CardBody, Image, CardText, Button } from './BannerPropostaStyles';
+import { Card, CardHeader, CardBody, Image, CardText, Button } from './BannerPropostaStyles.ts';
 
 function BannerProposta() {
   return (

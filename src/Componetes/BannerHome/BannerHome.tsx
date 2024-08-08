@@ -9,7 +9,7 @@ import {
   SpanBanner,
   Text,
   Btn
-} from './BannerHomeStyles'; // Importe os estilos
+} from './BannerHomeStyles.ts'; 
 
 import { useNavigate } from 'react-router-dom';
 import banner from '../../assets/banner.jpg';

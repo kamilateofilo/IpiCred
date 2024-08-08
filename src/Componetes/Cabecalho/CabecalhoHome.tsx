@@ -9,7 +9,7 @@ import {
   Separator,
   Btn,
   NavbarContainer
-} from './CabecalhoHomeStyles'; 
+} from './CabecalhoHomeStyles.ts'; 
 
 import logo from '../../assets/logoIpi.png';
 import { useNavigate } from 'react-router-dom';

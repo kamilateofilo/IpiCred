@@ -5,7 +5,7 @@ import {
   TextContainer,
   Wrapper,
   Column
-} from './PlataformaHomeStyles';
+} from './PlataformaHomeStyles.ts';
 
 import { useNavigate } from 'react-router-dom';
 import Plataforma from '../../assets/plataforma.png';

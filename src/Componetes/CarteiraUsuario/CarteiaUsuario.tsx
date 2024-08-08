@@ -1,6 +1,5 @@
-import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BannerWrapper, BannerContainer, CardRow, CardWrapper, CardContent, TextSection, ImageSection } from './CarteiraUsuarioStyles';
+import { BannerWrapper, BannerContainer, CardRow, CardWrapper, CardContent, TextSection, ImageSection } from './CarteiraUsuarioStyles.ts';
 
 import Cifrao from '../../assets/cifrao.png';
 import Grafico from '../../assets/grafico.png';

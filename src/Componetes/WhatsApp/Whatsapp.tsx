@@ -1,5 +1,5 @@
-import { FloatingButtonContainer, WhatsAppLogo, ButtonText } from './WhatsappStyles';
-import whatsappLogo from '../../assets/whatsapp.png'; // Substitua com o caminho correto para o logo do WhatsApp
+import { FloatingButtonContainer, WhatsAppLogo, ButtonText } from './WhatsappStyles.ts';
+import whatsappLogo from '../../assets/whatsapp.png';
 
 const FloatingButton = () => {
   return (

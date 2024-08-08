@@ -1,5 +1,5 @@
 import Cooperado from '../../assets/cadastro.png';
-import { Card, CardHeader, CardBody, Image, CardText, Button } from './BannerCooperadoStyles';
+import { Card, CardHeader, CardBody, Image, CardText, Button } from './BannerCooperadoStyles.ts';
 
 function BannerCooperado() {
   return (

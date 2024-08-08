@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BannerWrapper, BannerContainer, TextSection, ImageSection, Btn } from './BannerUsuarioStyles';
+import { BannerWrapper, BannerContainer, TextSection, ImageSection, Btn } from './BannerUsuarioStyles.ts';
 
 import Usuario from '../../assets/usuario.png'
 

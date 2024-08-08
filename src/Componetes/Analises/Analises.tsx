@@ -1,7 +1,16 @@
-import { PageContainer, CardContainer, CardHeader, CardBody, InnerCard, Table, StatusButton } from './AnalisesStyles';
+
+import { PageContainer, CardContainer, CardHeader, CardBody, InnerCard, Table, StatusButton } from './AnalisesStyles.ts';
+
+interface TableData {
+  id: number;
+  submissao: string;
+  cooperado: string;
+  solicitacoes: number;
+  status: 'Concluído' | 'Em Progresso' | 'Pendente';
+}
 
 function Analises() {
-  const tableData = [
+  const tableData: TableData[] = [
     { id: 1, submissao: '2024-08-01', cooperado: 'Cooperado A', solicitacoes: 5, status: 'Concluído' },
     { id: 2, submissao: '2024-08-02', cooperado: 'Cooperado B', solicitacoes: 3, status: 'Pendente' },
     { id: 3, submissao: '2024-08-03', cooperado: 'Cooperado C', solicitacoes: 2, status: 'Em Progresso' },

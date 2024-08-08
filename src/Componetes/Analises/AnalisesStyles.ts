@@ -1,5 +1,8 @@
-// AnalisesStyled.js
 import styled from 'styled-components';
+
+interface StatusButtonProps {
+  status: 'Concluído' | 'Em Progresso' | 'Pendente' | 'Outro';
+}
 
 export const PageContainer = styled.div`
   display: flex;
@@ -64,14 +67,14 @@ export const Table = styled.table`
     font-size: 15px;
     text-align: center; 
     @media (max-width: 768px) {
-    font-size: 13px;
-    padding: 0.25rem 0.5rem;
-  }
+      font-size: 13px;
+      padding: 0.25rem 0.5rem;
+    }
 
-  @media (max-width: 576px) {
-    font-size: 11px;
-    padding: 0.2rem 0.4rem;
-  }
+    @media (max-width: 576px) {
+      font-size: 11px;
+      padding: 0.2rem 0.4rem;
+    }
   }
 
   td {
@@ -80,14 +83,14 @@ export const Table = styled.table`
     text-align: center; 
 
     @media (max-width: 768px) {
-    font-size: 13px;
-    padding: 0.25rem 0.5rem;
-  }
+      font-size: 13px;
+      padding: 0.25rem 0.5rem;
+    }
 
-  @media (max-width: 576px) {
-    font-size: 11px;
-    padding: 0.2rem 0.4rem;
-  }
+    @media (max-width: 576px) {
+      font-size: 11px;
+      padding: 0.2rem 0.4rem;
+    }
   }
 
   th:nth-child(1), td:nth-child(1) {
@@ -116,7 +119,7 @@ export const Table = styled.table`
   }
 `;
 
-export const StatusButton = styled.div`
+export const StatusButton = styled.div<StatusButtonProps>`
   display: inline-block;
   padding: 0.375rem 0.75rem;
   border-radius: 20px;

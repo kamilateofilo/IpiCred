@@ -5,7 +5,7 @@ import {
     TextContainer,
     Wrapper,
     Column
-  } from './BannerHomeRuralStyles';
+  } from './BannerHomeRuralStyles.ts';
   
   import Plataforma from '../../assets/rural.jpg';
   
