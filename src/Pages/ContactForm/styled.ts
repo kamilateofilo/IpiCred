@@ -2,7 +2,8 @@ import styled, {css} from "styled-components";
 
 
   interface ButtonProps {
-    isValid: boolean;
+    isValid?: boolean;
+    disabled?: boolean;
   }
   
   
@@ -77,14 +78,4 @@ import styled, {css} from "styled-components";
       max-width: 100%;
     }
   `;
-
-// export const BackButton = styled(BackButtonComponent)`
-// margin-bottom: 1rem;
-
-// @media (max-width: 600px) {
-//   margin-bottom: 50px;
-//   font-size: 14px;
-//   color: #333;
-// }
-// `;
   

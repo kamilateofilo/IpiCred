@@ -1,28 +1,38 @@
 import { useState } from 'react';
-import { Button } from '../../Pages/ContactForm/styled';
+import { Button } from './styled';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import IconeWhatsapp from "../../assets/images/whatsapp_symbol.png.png";
-import ModalImage from "../../assets/images/modal-image.png"
+import ModalImage from "../../assets/images/modal-image.png";
+
+interface ModalButtonProps {
+    onClick: () => void;
+    disabled: boolean
+}
 
 
-function ModalButton() {
+const ModalButton: React.FC<ModalButtonProps> = ({ onClick, disabled }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [isFormValid] = useState<boolean>(false);
 
     const navigate = useNavigate();
     const handleButtonClick = () => {
-    navigate('/');
-  };
+        navigate('/');
+    };
 
     return (
         <>
             <Button
                 type='submit'
-                isValid={isFormValid} 
-                onClick={handleShow}
+                onClick={() => {
+                    if (!disabled) {
+                        onClick();
+                        handleShow();
+                    }
+                }}
+                disabled={disabled}
+                isValid={true}
             >
                 <img style={{marginRight: "5px"}} src={IconeWhatsapp} alt="ícone whatsapp" />
                 Continuar pelo whatsapp
@@ -54,6 +64,6 @@ function ModalButton() {
             </Modal>
         </>
     );
-}
+};
 
 export default ModalButton;

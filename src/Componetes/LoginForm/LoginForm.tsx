@@ -10,7 +10,8 @@ import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
 
-  const [setPassword] = useState<string>('');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const togglePasswordVisibility = () => {
@@ -48,9 +49,9 @@ export const LoginForm = () => {
               required
             />
 
-            <StyledLink>
+            <StyledLink to="">
                  Esqueci minha senha
-              </StyledLink>
+            </StyledLink>
 
            <Icon
             src={showPassword ? eyeOffIcon : eyeIcon}

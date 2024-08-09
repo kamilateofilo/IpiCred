@@ -8,53 +8,102 @@ import { useNavigate } from "react-router-dom";
 
 interface StepProps {
     formData: FormData;
-    onFormDataChange: (data: FormData) => void;
+    onFormDataChange: (data:  Partial<FormData>) => void;
     nextStep?: () => void;
     prevStep?: () => void;
     handleSubmit?: () => void;
-    isSubmitting?: boolean;
+    isSubmitting: boolean;
     error?: string | null;
 }
 
-export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting, error }: StepProps) => {
+export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => {
     const [isFormValid, setIsFormValid] = useState<boolean>(false);
+    const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+    const [touchedFields, setTouchedFields] = useState<Set<string>>(new Set());
+    const [isSubmitting] = useState<boolean>(false);
     const navigate = useNavigate();
 
-
-    const validateForm = (data: FormData) => {
-        const errors: string[] = [];
-
-        if (!data.nome_completo) errors.push('Nome completo é obrigatório.');
-        if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) errors.push('E-mail inválido.');
-        if (!data.telefone_contato || !/^\d+$/.test(data.telefone_contato)) errors.push('Telefone inválido.');
-        if (!data.cargo) errors.push('Cargo é obrigatório.');
-        if (!data.atividade_cooperativa) errors.push('Atividade cooperativa é obrigatória.');
-
-        return errors;
+    
+    const validateField = (name: keyof FormData, value: string) => {
+        let error = '';
+    
+        switch (name) {
+            case 'nome_completo':
+                if (!value.trim()) error = 'Nome completo é obrigatório.';
+                break;
+            case 'email':
+                if (!value || !/\S+@\S+\.\S+/.test(value)) error = 'E-mail inválido. Deve estar no formato exemplo@gmail.com';
+                break;
+            case 'telefone_contato':
+                
+                // eslint-disable-next-line no-case-declarations
+                const cleaned = value.replace(/\D/g, '');
+                if (!cleaned || !/^\d{11}$/.test(cleaned)) error = 'Telefone inválido. Deve estar no formato (XX)XXXXX-XXXX.';
+                break;
+            case 'cargo':
+                if (!value.trim()) error = 'Cargo é obrigatório.';
+                break;
+            case 'atividade_cooperativa':
+                if (!value) error = 'Atividade cooperativa é obrigatória.';
+                break;
+            default:
+                break;
+        }
+    
+        return error;
     };
+    
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const formatPhoneNumber = (value: string) => {
+        const cleaned = value.replace(/\D/g, ''); 
+        if (cleaned.length <= 11) {
+            const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
+            if (match) {
+                return `(${match[1]}) ${match[2]}-${match[3]}`;
+            }
+        }
+        return cleaned;
+    };
+    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
+    
         onFormDataChange({
             ...formData,
-            [name]: name === 'telefone_contato' ? value.replace(/\D/g, '') : value,
+            [name]: name === 'telefone_contato' ? value : value, 
         });
+    
+        setTouchedFields(prev => new Set(prev.add(name)));
     };
 
     useEffect(() => {
-        const errors = validateForm(formData);
-        setIsFormValid(errors.length === 0);
+        const errors = Object.keys(formData).reduce((acc, key) => {
+            const typedKey = key as keyof FormData;
+            const error = validateField(typedKey, formData[typedKey]);
+            if (error) acc[typedKey] = error;
+            return acc;
+        }, {} as Record<keyof FormData, string>);
+
+        setFormErrors(errors);
+        setIsFormValid(Object.keys(errors).length === 0);
     }, [formData]);
 
+    const handleBlur = (name: string) => {
+        setTouchedFields(prev => new Set(prev.add(name)));
+    };
+
     const handleSubmit = () => {
-        console.log("eee pasei aqui ")
+        console.log("eee STEP 1 passou");
         if (!isFormValid) return;
 
         nextStep && nextStep();
     };
 
     return (
-        <><BackButton action={() => navigate('/')} /><>
+        <>
+            <BackButton action={() => navigate('/')} />
             <div>
                 <Form onSubmit={(e) => e.preventDefault()}>
                     <TextWrapper>
@@ -69,9 +118,12 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting, er
                         name="nome_completo"
                         value={formData.nome_completo}
                         onChange={handleChange}
-                        required />
-
-                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        onBlur={() => handleBlur('nome_completo')}
+                        required
+                    />
+                    {touchedFields.has('nome_completo') && formErrors.nome_completo && (
+                        <p style={{ color: 'red' }}>{formErrors.nome_completo}</p>
+                    )}
 
                     <Input
                         type="email"
@@ -79,7 +131,12 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting, er
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        required />
+                        onBlur={() => handleBlur('email')}
+                        required
+                    />
+                    {touchedFields.has('email') && formErrors.email && (
+                        <p style={{ color: 'red' }}>{formErrors.email}</p>
+                    )}
 
                     <Input
                         type="tel"
@@ -87,17 +144,23 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting, er
                         name='telefone_contato'
                         value={formData.telefone_contato}
                         onChange={handleChange}
-                        required />
+                        onBlur={() => handleBlur('telefone_contato')}
+                        required
+                    />
+                    {touchedFields.has('telefone_contato') && formErrors.telefone_contato && (
+                        <p style={{ color: 'red' }}>{formErrors.telefone_contato}</p>
+                    )}
 
                     <Select
                         name="atividade_cooperativa"
                         value={formData.atividade_cooperativa}
                         onChange={handleChange}
+                        onBlur={() => handleBlur('atividade_cooperativa')}
                         required
                     >
                         <option value="" style={{ color: "#49454F" }}>Atividade da cooperativa</option>
                         <option value="Extrativista">Extrativista</option>
-                        <option value="Pecuaria">Pecuária</option>
+                        <option value="Pecuária">Pecuária</option>
                         <option value="Aquicultura">Aquicultura</option>
                         <option value="Fruticultura">Fruticultura</option>
                         <option value="Horticultura">Horticultura</option>
@@ -106,6 +169,9 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting, er
                         <option value="Agricultura">Agricultura</option>
                         <option value="Outro">Outro</option>
                     </Select>
+                    {touchedFields.has('atividade_cooperativa') && formErrors.atividade_cooperativa && (
+                        <p style={{ color: 'red' }}>{formErrors.atividade_cooperativa}</p>
+                    )}
 
                     <Input
                         type="text"
@@ -113,11 +179,14 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting, er
                         name="cargo"
                         value={formData.cargo}
                         onChange={handleChange}
-                        required />
+                        onBlur={() => handleBlur('cargo')}
+                        required
+                    />
+                    {touchedFields.has('cargo') && formErrors.cargo && (
+                        <p style={{ color: 'red' }}>{formErrors.cargo}</p>
+                    )}
 
                     <p>Ao continuar, esteja ciente da <a href="#">política de privacidade</a> da IpiCred</p>
-
-                    {error && <p style={{ color: 'red' }}>{error}</p>}
 
                     <Button
                         isValid={isFormValid}
@@ -128,7 +197,8 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting, er
                         {isSubmitting ? 'Enviando...' : 'Continuar'}
                     </Button>
                 </Form>
-            </div></></>
+            </div>
+        </>
     );
 };
 

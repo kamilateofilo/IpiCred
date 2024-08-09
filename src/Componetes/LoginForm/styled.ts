@@ -34,7 +34,7 @@ export const Input = styled.input`
     &::placeholder {
      color: #49454F;
      font-size: 16px;
-     font-family: "Roboto"
+     font-family: "Roboto";
      font-weight: 400;
    }
 

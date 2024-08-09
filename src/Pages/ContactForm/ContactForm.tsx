@@ -46,7 +46,6 @@ const ContactForm = () => {
     }));
   };
 
-  console.log("eee formData.municipio", formData.municipio)
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
@@ -66,7 +65,7 @@ const ContactForm = () => {
       }
     }
 
-    console.log("eee formData agora vai 1.0", formData)
+    console.log("Enviando dados:", formData);
 
     try {
       const response = await fetch('https://ipicred-api.vercel.app/api/v1/dadoscooperativa/', {
@@ -81,15 +80,14 @@ const ContactForm = () => {
 
 
       if (response.status !== 201) {
-        console.log("eee opa", response)
+        console.log("post está sendo feito", response)
       }
 
-      //aciona modal aqui
 
       return
 
     } catch (err) {
-      console.error('eee Erro:', err);
+      console.error('Erro ao enviar formulário:', err);
     } finally {
       setIsSubmitting(false);
     }
