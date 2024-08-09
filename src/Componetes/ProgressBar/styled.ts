@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { StyledProps } from 'styled-components';
 
 interface StyledProps {
     color?: string;

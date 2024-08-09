@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Link, Link as RouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export const Header = styled.header`

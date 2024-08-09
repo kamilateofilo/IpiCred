@@ -8,12 +8,10 @@ import BannerHomeRural from "../../Componetes/BannerHomeRural/BannerHomeRural";
 import Footer from "../../Componetes/Footer/FooterHome";
 import FloatingButton from "../../Componetes/WhatsApp/Whatsapp";
 
-import GlobalStyles from "../../../GlobalStyles"
 
 function Home() {
     return (
       <>
-        <GlobalStyles/>
         <FloatingButton />
         <Cabecalho />
         <BannerHome />

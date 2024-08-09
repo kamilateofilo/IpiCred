@@ -3,14 +3,10 @@ import { TextWrapper } from '../../Pages/ContactForm/styled';
 import { ChangeEvent, useState } from "react";
 
 import eyeIcon from "../../assets/images/eye-icon.png";
-import eyeOffIcon  from "../../assets/images/eye-closed-icon.png";
+import eyeOffIcon from "../../assets/images/eye-closed-icon.png";
 import { useNavigate } from 'react-router-dom';
 
-
-
 export const LoginForm = () => {
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -25,44 +21,46 @@ export const LoginForm = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
+    // Exemplo: Você pode usar `password` aqui para enviar uma solicitação de login
+    console.log('Senha digitada:', password);
     navigate('/HomeUsuario');
   };
   
-    return (
-        <Form>
-          <Conteiner>
-            <TextWrapper>
-              <h3>Portal do Parceiro</h3>
-              <p>Solicite crédito para o seus cooperados de forma fácil e rápida</p>
-            </TextWrapper>
+  return (
+    <Form>
+      <Conteiner>
+        <TextWrapper>
+          <h3>Portal do Parceiro</h3>
+          <p>Solicite crédito para o seus cooperados de forma fácil e rápida</p>
+        </TextWrapper>
 
-            <Input 
-              type="email"
-              placeholder="Digite seu e-mail"
-              required
-            />
+        <Input 
+          type="email"
+          placeholder="Digite seu e-mail"
+          required
+        />
 
-            <Input 
-              type={showPassword ? 'text' : 'password'}
-              onChange={handlePasswordChange}
-              placeholder="Digite sua senha"
-              required
-            />
+        <Input 
+          type={showPassword ? 'text' : 'password'}
+          onChange={handlePasswordChange}
+          placeholder="Digite sua senha"
+          required
+        />
 
-            <StyledLink to="">
-                 Esqueci minha senha
-            </StyledLink>
+        <StyledLink to="">
+            Esqueci minha senha
+        </StyledLink>
 
-           <Icon
-            src={showPassword ? eyeOffIcon : eyeIcon}
-            alt={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
-            onClick={togglePasswordVisibility}
-           />
+        <Icon
+          src={showPassword ? eyeOffIcon : eyeIcon}
+          alt={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
+          onClick={togglePasswordVisibility}
+        />
 
-            <Button onClick={handleButtonClick} type="submit">Entrar</Button>
-          </Conteiner>  
-        </Form>
-    );
-  };
-  
-  export default LoginForm;
+        <Button onClick={handleButtonClick} type="submit">Entrar</Button>
+      </Conteiner>  
+    </Form>
+  );
+};
+
+export default LoginForm;

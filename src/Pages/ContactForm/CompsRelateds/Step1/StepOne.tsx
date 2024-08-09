@@ -23,7 +23,6 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
     const [isSubmitting] = useState<boolean>(false);
     const navigate = useNavigate();
 
-    
     const validateField = (name: keyof FormData, value: string) => {
         let error = '';
     
@@ -35,8 +34,6 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                 if (!value || !/\S+@\S+\.\S+/.test(value)) error = 'E-mail inválido. Deve estar no formato exemplo@gmail.com';
                 break;
             case 'telefone_contato':
-                
-                // eslint-disable-next-line no-case-declarations
                 const cleaned = value.replace(/\D/g, '');
                 if (!cleaned || !/^\d{11}$/.test(cleaned)) error = 'Telefone inválido. Deve estar no formato (XX)XXXXX-XXXX.';
                 break;
@@ -52,20 +49,6 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
     
         return error;
     };
-    
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const formatPhoneNumber = (value: string) => {
-        const cleaned = value.replace(/\D/g, ''); 
-        if (cleaned.length <= 11) {
-            const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
-            if (match) {
-                return `(${match[1]}) ${match[2]}-${match[3]}`;
-            }
-        }
-        return cleaned;
-    };
-    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
