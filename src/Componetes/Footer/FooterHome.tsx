@@ -23,7 +23,7 @@ const Footer = () => {
       </Column>
       <Column>
         <h4>Entre em contato</h4>
-        <p className='text'>ipicred@gmail.com</p>
+        <p className='text'>contato@ipicred.com.br</p>
         <p className='text'>(92) 99248-6758</p>
       </Column>
       <Column>
