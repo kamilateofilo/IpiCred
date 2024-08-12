@@ -94,7 +94,7 @@ const ContactForm = () => {
   };
 
   return (
-    <>
+
       <Container>
         <Cabecalho />
         {step === 1 ? (
@@ -126,7 +126,6 @@ const ContactForm = () => {
           />
         )}
       </Container>
-    </>
   );
 }
 

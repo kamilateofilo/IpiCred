@@ -17,8 +17,8 @@ text-align: center;
 color: #ffffff;
 border: none;
 cursor: pointer;
-margin: 10px auto;
-background-color: ${props => props.disabled ? '#AC883F' : (props.isValid ? '#E4E4E4' : '')};
+margin-top: 2rem;
+background-color: ${props => props.disabled ? '#E4E4E4' : (props.isValid ? '#AC883F' : '')}; 
 cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
 
 

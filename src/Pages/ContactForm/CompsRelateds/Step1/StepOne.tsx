@@ -90,8 +90,8 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
             <div>
                 <Form onSubmit={(e) => e.preventDefault()}>
                     <TextWrapper>
-                        <h3>Boas vindas à IpiCred!</h3>
-                        <p>Preencha com os dados do seu negócio que entraremos em contato com você.</p>
+                    <h3 style={{ marginTop: "15px" }}>Boas vindas à IpiCred!</h3>
+                    <p>Preencha com os dados do seu negócio que entraremos em contato com você.</p>
                         <h3>Bora começar?</h3>
                     </TextWrapper>
 
@@ -102,8 +102,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                         value={formData.nome_completo}
                         onChange={handleChange}
                         onBlur={() => handleBlur('nome_completo')}
-                        required
-                    />
+                        required/>
                     {touchedFields.has('nome_completo') && formErrors.nome_completo && (
                         <p style={{ color: 'red' }}>{formErrors.nome_completo}</p>
                     )}

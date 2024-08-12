@@ -12,7 +12,7 @@ import styled, {css} from "styled-components";
     width: 100%;
     max-width: 600px;
     margin: 2.5rem auto;
-    padding: 2rem;
+    padding: 1%.2;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
@@ -46,7 +46,7 @@ import styled, {css} from "styled-components";
       color: #79747E;
       font-weight: 400;
       font-size: 16px;
-      margin-bottom: 26px;
+      margin-top: 15px;
     }
   `;
   

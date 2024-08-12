@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import StyledProps  from 'styled-components';
 
 interface StyledProps {
     color?: string;
@@ -10,6 +11,7 @@ export const ProgressContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
+  
 `;
 
 export const ProgressBarWrapper = styled.div`
