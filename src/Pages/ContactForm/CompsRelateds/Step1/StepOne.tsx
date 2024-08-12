@@ -3,8 +3,7 @@ import { FormData } from "../../ContactForm";
 import { Button, Form, TextWrapper } from "../../styled";
 import { Input } from "../../../../styles/Input";
 import { Select } from "../../../../styles/Select";
-import BackButton from "../../../../Componetes/BackButton/BackButton";
-import { useNavigate } from "react-router-dom";
+
 
 interface StepProps {
     formData: FormData;
@@ -21,7 +20,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
     const [formErrors, setFormErrors] = useState<Record<string, string>>({});
     const [touchedFields, setTouchedFields] = useState<Set<string>>(new Set());
     const [isSubmitting] = useState<boolean>(false);
-    const navigate = useNavigate();
+
 
     const validateField = (name: keyof FormData, value: string) => {
         let error = '';
@@ -34,6 +33,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                 if (!value || !/\S+@\S+\.\S+/.test(value)) error = 'E-mail inválido. Deve estar no formato exemplo@gmail.com';
                 break;
             case 'telefone_contato':
+                // eslint-disable-next-line no-case-declarations
                 const cleaned = value.replace(/\D/g, '');
                 if (!cleaned || !/^\d{11}$/.test(cleaned)) error = 'Telefone inválido. Deve estar no formato (XX)XXXXX-XXXX.';
                 break;
@@ -86,12 +86,11 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
 
     return (
         <>
-            <BackButton action={() => navigate('/')} />
             <div>
                 <Form onSubmit={(e) => e.preventDefault()}>
                     <TextWrapper>
-                    <h3 style={{ marginTop: "15px" }}>Boas vindas à IpiCred!</h3>
-                    <p>Preencha com os dados do seu negócio que entraremos em contato com você.</p>
+                        <h3>Boas vindas à IpiCred!</h3>
+                        <p>Preencha com os dados do seu negócio que entraremos em contato com você.</p>
                         <h3>Bora começar?</h3>
                     </TextWrapper>
 
@@ -102,10 +101,11 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                         value={formData.nome_completo}
                         onChange={handleChange}
                         onBlur={() => handleBlur('nome_completo')}
-                        required/>
-                    {touchedFields.has('nome_completo') && formErrors.nome_completo && (
-                        <p style={{ color: 'red' }}>{formErrors.nome_completo}</p>
-                    )}
+                        required
+                    />
+                        {touchedFields.has('nome_completo') && formErrors.nome_completo && (
+                            <p style={{ color: 'red' }}>{formErrors.nome_completo}</p>
+                        )}
 
                     <Input
                         type="email"
@@ -116,9 +116,9 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                         onBlur={() => handleBlur('email')}
                         required
                     />
-                    {touchedFields.has('email') && formErrors.email && (
-                        <p style={{ color: 'red' }}>{formErrors.email}</p>
-                    )}
+                        {touchedFields.has('email') && formErrors.email && (
+                            <p style={{ color: 'red' }}>{formErrors.email}</p>
+                        )}
 
                     <Input
                         type="tel"
@@ -129,9 +129,9 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                         onBlur={() => handleBlur('telefone_contato')}
                         required
                     />
-                    {touchedFields.has('telefone_contato') && formErrors.telefone_contato && (
-                        <p style={{ color: 'red' }}>{formErrors.telefone_contato}</p>
-                    )}
+                        {touchedFields.has('telefone_contato') && formErrors.telefone_contato && (
+                            <p style={{ color: 'red' }}>{formErrors.telefone_contato}</p>
+                        )}
 
                     <Select
                         name="atividade_cooperativa"
@@ -151,9 +151,9 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                         <option value="Agricultura">Agricultura</option>
                         <option value="Outro">Outro</option>
                     </Select>
-                    {touchedFields.has('atividade_cooperativa') && formErrors.atividade_cooperativa && (
-                        <p style={{ color: 'red' }}>{formErrors.atividade_cooperativa}</p>
-                    )}
+                        {touchedFields.has('atividade_cooperativa') && formErrors.atividade_cooperativa && (
+                            <p style={{ color: 'red' }}>{formErrors.atividade_cooperativa}</p>
+                        )}
 
                     <Input
                         type="text"
@@ -164,9 +164,9 @@ export const StepOne = ({ formData, onFormDataChange, nextStep }: StepProps) => 
                         onBlur={() => handleBlur('cargo')}
                         required
                     />
-                    {touchedFields.has('cargo') && formErrors.cargo && (
-                        <p style={{ color: 'red' }}>{formErrors.cargo}</p>
-                    )}
+                        {touchedFields.has('cargo') && formErrors.cargo && (
+                            <p style={{ color: 'red' }}>{formErrors.cargo}</p>
+                        )}
 
                     <p>Ao continuar, esteja ciente da <a href="#">política de privacidade</a> da IpiCred</p>
 

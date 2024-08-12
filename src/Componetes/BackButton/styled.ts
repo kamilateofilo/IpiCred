@@ -1,18 +1,20 @@
 import styled from "styled-components";
-//import { Link } from 'react-router-dom';
+
 
 export const Conteiner = styled.div`
-    margin: 1em;
-`;
+    position: fixed;
+    top: 14%; 
+    left: 10px; 
+    z-index: 1000;
 
-export const LeftButton = styled.div`
-    position: absolute;
-    top: 11%;
-
-    >img {
-        margin-right: 10px;
+    
+    @media (max-width: 600px) {
+        top: 7%;
+        font-size: 14px;
+        color: #333;
     }
 `;
+
 
 export const StyledLink = styled.span`
     color: #77787A;
@@ -22,10 +24,8 @@ export const StyledLink = styled.span`
     display: flex;
     cursor: pointer;
 
-    @media (max-width: 600px) {
-        margin-bottom: 50px;
-        font-size: 14px;
-        color: #333;
+    >img {
+        margin-right: 4px;
     }
 `;
 

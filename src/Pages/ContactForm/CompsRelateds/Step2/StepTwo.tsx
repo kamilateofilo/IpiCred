@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useCallback } from "react";
 import { Form, TextWrapper } from "../../styled";
 import { Input } from "../../../../styles/Input";
 import { Select, SelectWrapper } from "../../../../styles/Select";
 import ModalButton from "../../../../Componetes/ModalButton/ModalButton";
 import { FormData } from "../../ContactForm";
-import BackButton from "../../../../Componetes/BackButton/BackButton";
+
 
 interface StepProps {
     formData: FormData;
@@ -14,7 +15,7 @@ interface StepProps {
     isSubmitting: boolean;
 }
 
-export const StepTwo = ({ formData, onFormDataChange, handleSubmit, prevStep }: StepProps) => {
+export const StepTwo = ({ formData, onFormDataChange, handleSubmit }: StepProps) => {
     const [stateList, setStateList] = useState<string[]>([]);
     const [municipiosList, setMunicipiosList] = useState<string[]>([]);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -134,7 +135,6 @@ export const StepTwo = ({ formData, onFormDataChange, handleSubmit, prevStep }: 
 
     return (
         <>
-            <BackButton action={() => prevStep()} />
             <div>
                 <Form>
                     <TextWrapper>
@@ -197,3 +197,5 @@ export const StepTwo = ({ formData, onFormDataChange, handleSubmit, prevStep }: 
         </>
     );
 };
+
+export default StepTwo;
