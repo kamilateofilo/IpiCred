@@ -8,10 +8,11 @@ import BannerHomeRural from "../../Componetes/BannerHomeRural/BannerHomeRural";
 import Footer from "../../Componetes/Footer/FooterHome";
 import FloatingButton from "../../Componetes/WhatsApp/Whatsapp";
 
+import { Wrapper } from './Styled.ts';
 
 function Home() {
     return (
-      <>
+      <Wrapper>
         <FloatingButton />
         <Cabecalho />
         <BannerHome />
@@ -21,7 +22,7 @@ function Home() {
         <PainelLinhas />
         <BannerHomeRural />
         <Footer />
-      </>
+    </Wrapper>
     );
   }
   

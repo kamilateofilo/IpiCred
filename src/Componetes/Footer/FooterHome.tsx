@@ -1,14 +1,21 @@
 import { FooterContainer, Column, Separator, Logo, SocialIcons, TextContent } from './FooterHomeStyles.ts';
+import { useTranslation } from 'react-i18next';
+
 import facebookIcon from '../../assets/facebook.png';
 import instagramIcon from '../../assets/instagram.png'; 
 import linkedinIcon from '../../assets/linkedin.png'; 
 import footer from '../../assets/footer.png';
 
 const Footer = () => {
+
+  const { t } = useTranslation(); 
+
   return (
     <FooterContainer>
       <Column>
-        <Logo>IpiCred</Logo>
+        <Logo>
+          {t('HOME.FOOTER.IPICRED')}
+        </Logo>
         <SocialIcons>
           <img src={facebookIcon} alt="Facebook" />
           <img src={instagramIcon} alt="Instagram" />
@@ -16,24 +23,24 @@ const Footer = () => {
         </SocialIcons>
       </Column>
       <Column>
-        <h4>Páginas</h4>
-        <p className='text'>Página Inicial</p>
-        <p className='text'>Manifesto</p>
-        <p className='text'>Sobre Nós</p>
+        <h4>{t('HOME.FOOTER.PAGES')}</h4>
+        <p className='text'>{t('HOME.FOOTER.HOME_PAGE')}</p>
+        <p className='text'>{t('HOME.MANIFEST')}</p>
+        <p className='text'>{t('HOME.FOOTER.ABOUT_US')}</p>
       </Column>
       <Column>
-        <h4>Entre em contato</h4>
+        <h4>{t('HOME.FOOTER.GET_IN_TOUCH')}</h4>
         <p className='text'>ipicred@gmail.com</p>
         <p className='text'>(92) 99248-6758</p>
       </Column>
       <Column>
-        <h4>Com apoio:</h4>
+        <h4>{t('HOME.FOOTER.WITH_SUPPORT')}</h4>
         <img className='footer' src={footer} alt="footer" />
       </Column>
       <Separator />
       <TextContent>
         <p className='rights'>
-          2024 IpiCred - Tecnologia e Intermediação de Serviços Inova Simples (I.S.) CNPJ 54.231.192/0001-76. Todos os direitos reservados
+        {t('HOME.FOOTER.FOOTER')}
         </p>
        
       </TextContent>

@@ -1,4 +1,5 @@
 import { Title, CardContainer, CustomCard, CardImage, TitleCard, TextCard } from './BannerAtendimentoStyles.ts'; // Importe os estilos
+import { useTranslation, Trans } from 'react-i18next';
 
 import Call from '../../assets/call.png';
 import Group from '../../assets/grupo.png';
@@ -6,13 +7,19 @@ import Moeda from '../../assets/moeda.png';
 import Link from '../../assets/link.png';
 
 const BannerAtendimento = () => {
+    
+    const { t } = useTranslation(); 
+
     return (
         <>
             <Title>
-                Somos a primeira plataforma de crédito,
+                {t('HOME.SERVICE_BANNER_TITLE')}
                 <br />
-                feitos para quem reconhece o valor da <span style={{ color: '#AC883F' }}>agricultura familiar</span>
-            </Title>
+                <Trans
+                    i18nKey="HOME.SERVICE_BANNER_CAPTION"
+                    components={{ agriculture: <span style={{ color: '#AC883F' }} /> }}
+                />            
+                </Title>
 
             <CardContainer>
                 <CustomCard className="card">
@@ -20,9 +27,9 @@ const BannerAtendimento = () => {
                         <CardImage>
                             <img src={Call} alt="Atendimento" />
                         </CardImage>
-                        <TitleCard className="card-subtitle mb-2">Atendimento Rápido e Humanizado</TitleCard>
+                        <TitleCard className="card-subtitle mb-2">{t('HOME.CARDS.SERVICE')}</TitleCard>
                         <TextCard className="card-text">
-                            Suporte personalizado em até 5 minutos, garantindo assistência dedicada e ágil aos clientes.
+                            {t('HOME.CARDS.SERVICE_CAPTION')}
                         </TextCard>
                     </div>
                 </CustomCard>
@@ -32,9 +39,9 @@ const BannerAtendimento = () => {
                         <CardImage>
                             <img src={Group} alt="Assessoria técnica" />
                         </CardImage>
-                        <TitleCard className="card-subtitle mb-2">Assessoria técnica direto pela plataforma</TitleCard>
+                        <TitleCard className="card-subtitle mb-2">{t('HOME.CARDS.ACESSORY')}</TitleCard>
                         <TextCard className="card-text">
-                            Solicite suporte técnico para o seu projeto ou acompanhamento direto pela plataforma.
+                            {t('HOME.CARDS.ACESSORY_CAPTION')}
                         </TextCard>
                     </div>
                 </CustomCard>
@@ -44,9 +51,9 @@ const BannerAtendimento = () => {
                         <CardImage>
                             <img src={Moeda} alt="Linhas de crédito" />
                         </CardImage>
-                        <TitleCard className="card-subtitle mb-2">Linhas de crédito especiais para agricultura familiar</TitleCard>
+                        <TitleCard className="card-subtitle mb-2">{t('HOME.CARDS.CREDIT')}</TitleCard>
                         <TextCard className="card-text">
-                            Acesso a diversas linhas de crédito para agricultura familiar, ampliando as opções de financiamento.
+                            {t('HOME.CARDS.CREDIT_CAPTION')}
                         </TextCard>
                     </div>
                 </CustomCard>
@@ -56,9 +63,9 @@ const BannerAtendimento = () => {
                         <CardImage>
                             <img src={Link} alt="Processo Digital" />
                         </CardImage>
-                        <TitleCard className="card-subtitle mb-2">Processo 100% Digital</TitleCard>
+                        <TitleCard className="card-subtitle mb-2">{t('HOME.CARDS.DIGITAL_PROCESS')}</TitleCard>
                         <TextCard className="card-text">
-                            Cadastre e solicite crédito para os seus associados sem sair da sua cooperativa.
+                            {t('HOME.CARDS.DIGIAL_PROCESS_CAPTION')}
                         </TextCard>
                     </div>
                 </CustomCard>

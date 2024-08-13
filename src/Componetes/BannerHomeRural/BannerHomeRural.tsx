@@ -6,10 +6,14 @@ import {
     Wrapper,
     Column
   } from './BannerHomeRuralStyles.ts';
-  
+  import { useTranslation, Trans } from 'react-i18next';
+
   import Plataforma from '../../assets/rural.jpg';
   
   const BannerHomeRural = () => {
+    
+    const { t } = useTranslation(); 
+
     return (
       <Section id="home">
         <Container className="container">
@@ -23,12 +27,20 @@ import {
             <Column className="col-md-6">
               <TextContainer>
                 <p>
-                Facilite o acesso ao crédito rural para seus <span className='span'>cooperados</span> de forma <span className='span'>simples</span> e <span className='span'>eficiente</span>
+                <Trans
+                  i18nKey="HOME.RURAL_CREDIT"
+                  components={{
+                  cooperados: <span className='span' />,
+                  simples: <span className='span' />,
+                  eficiente: <span className='span' />
+                    }}
+                  />
                 </p>
   
                 <div className="text-container">
                   <p className='text'>
-                  Cadastre, simule e solicite crédito, centralizando todas as informações e garantindo uma gestão financeira segura                  </p>
+                    {t('HOME.RURAL_CREDIT_CAPTION')}                  
+                  </p>
                 </div>
   
               </TextContainer>

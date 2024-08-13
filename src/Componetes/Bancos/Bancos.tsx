@@ -1,4 +1,5 @@
 import { Title, Container, Image } from './BancosStyles.ts'; 
+import { useTranslation } from 'react-i18next';
 
 import BancoBrasil from '../../assets/bancoBB.png';
 import Caixa from '../../assets/bancoCaixa.png';
@@ -6,9 +7,12 @@ import Santander from '../../assets/bancoSantander.png';
 import Sicredi from '../../assets/bancoSicred.png';
 
 const Bancos = () => {
+
+    const { t } = useTranslation(); 
+
     return (
         <>
-            <Title>Bancos que liberam mais crédito com a gente</Title>
+            <Title>{t('HOME.BANKS')}</Title>
 
             <Container>
                 <Image src={BancoBrasil} alt="Banco do Brasil" />

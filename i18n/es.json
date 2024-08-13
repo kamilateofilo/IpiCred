@@ -1,0 +1,57 @@
+{
+    "HOME": {
+        "ABOUT": "Sobre",
+        "MANIFEST": "Manifiesto",
+        "TO_GO": "Entrar",
+        "START_NOW": "Comenzar ahora",
+        "CREDIT_FINANCING": "$ Financiación de crédito",
+        "TITLE_BANNER": "Transforma el acceso al crédito para",
+        "COOPERATIVE": "cooperativas agrícolas",
+        "BODY_BANNER": "Registra, simula y solicita crédito para tus miembros sin salir de la propiedad. Bancariza tu cooperativa y cuenta con soporte técnico siempre que lo necesites, todo directamente a través de nuestra plataforma.",
+        "FIND_OUT_MORE": "Saber más",
+        "SERVICE_BANNER_TITLE": "Somos la primera plataforma de crédito,",
+        "SERVICE_BANNER_CAPTION": "hecha para quienes reconocen el valor de la <agriculture>agricultura familiar</agriculture>",
+        "CARDS": {
+            "SERVICE": "Servicio rápido y personalizado",
+            "SERVICE_CAPTION": "Soporte personalizado en hasta 5 minutos, garantizando asistencia dedicada y ágil a los clientes.",
+            "ACESSORY": "Asesoría técnica directamente a través de la plataforma",
+            "ACESSORY_CAPTION": "Solicita soporte técnico para tu proyecto o seguimiento directamente a través de la plataforma.",
+            "CREDIT": "Líneas de crédito especiales para la agricultura familiar",
+            "CREDIT_CAPTION": "Acceso a diversas líneas de crédito para la agricultura familiar, ampliando las opciones de financiamiento.",
+            "DIGITAL_PROCESS": "Proceso 100% Digital",
+            "DIGIAL_PROCESS_CAPTION": "Registra y solicita crédito para tus miembros sin salir de tu cooperativa."
+        },
+        "RURAL_CREDIT": "Facilita el acceso al crédito rural para tus <cooperados>miembros</cooperados> de manera <simples>simple</simples> y <eficiente>eficiente</eficiente>",
+        "RURAL_CREDIT_CAPTION": "Registra, simula y solicita crédito, centralizando toda la información y garantizando una gestión financiera segura",
+        "BANKS": "Bancos que otorgan más crédito con nosotros",
+        "CREDIT_LINES": {
+            "TITLE": "Encuentra la línea ideal para ti",
+            "SUB_TITLE": "Ofrecemos una variedad de opciones de crédito rural: desde la agricultura familiar hasta la Bioeconomía, impulsando cadenas productivas",
+            "PRONAF": "Pronaf Inversiones",
+            "PRONAF_CAPTION": "Monto máximo de hasta R$30.000,00 Tasa de interés efectiva de 0,4% anual.",
+            "PRONAF_A": "Pronaf 'A'",
+            "PRONAF_A_CAPTION": "Monto máximo de hasta R$40.000,00 Tasa de interés efectiva de 0,5% anual.",
+            "PRONAF_PROGRAM": "Pronaf Programas Especiales",
+            "PRONAF_PROGRAM_CAPTION": "Monto máximo de hasta R$30.000,00 Tasa de interés efectiva de 0,4% anual.",
+            "PRONAMP_INVESTIMENTS": "Pronamp Inversiones",
+            "PRONAMP_INVESTIMENTS_CAPTION": "Monto máximo de hasta R$30.000,00 Tasa de interés efectiva de 0,4% anual.",
+            "PRONAMP_COSTING": "Pronamp Costeo",
+            "PRONAMP_COSTING_CAPTION": "Monto máximo de hasta R$40.000,00 Tasa de interés efectiva de 0,5% anual.",
+            "PRONAF_SPECIAL_PROGRAMS": "Pronaf Programas Especiales",
+            "PRONAF_SPECIAL_PROGRAMS_CAPTION": "Monto máximo de hasta R$30.000,00 Tasa de interés efectiva de 0,4% anual."
+        },
+        "BANKARIZE": "Bancariza",
+        "YOUR_COOPERATIVE": "tu cooperativa",
+        "BANK_CAPITON": "Solicita y gestiona el crédito de tus miembros directamente, sin necesidad de ir al banco.",
+        "GET_FINANCING": "Obtén financiación",
+        "FOOTER": {
+            "IPICRED": "IpiCred",
+            "PAGES": "Páginas",
+            "HOME_PAGE": "Página de Inicio",
+            "ABOUT_US": "Sobre Nosotros",
+            "GET_IN_TOUCH": "Ponerse en contacto",
+            "WITH_SUPPORT": "Con el apoyo de:",
+            "FOOTER": "2024 IpiCred - Tecnología e intermediación de servicios Inova Simples (I.S.) CNPJ 54.231.192/0001-76. Todos los derechos reservados"
+        }
+    }
+}

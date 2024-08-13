@@ -6,6 +6,7 @@ import {
   Wrapper,
   Column
 } from './PlataformaHomeStyles.ts';
+import { useTranslation } from 'react-i18next';
 
 import { useNavigate } from 'react-router-dom';
 import Plataforma from '../../assets/plataforma.png';
@@ -13,6 +14,8 @@ import Plataforma from '../../assets/plataforma.png';
 const PlataformaHome = () => {
 
   const navigate = useNavigate();
+
+  const { t } = useTranslation(); 
 
   const handleButtonClick = () => {
     navigate('/contactForm');
@@ -31,18 +34,18 @@ const PlataformaHome = () => {
           <Column className="col-md-6">
             <TextContainer>
               <p className="textBaner">
-                Bancarize 
+                {t('HOME.BANKARIZE')} 
                 <br />
-                sua cooperativa
+                {t('HOME.YOUR_COOPERATIVE')}
               </p>
 
               <div className="text-container">
                 <p className='text'>
-                  Solicite e gerencie o crédito dos seus associados diretamente, sem precisar ir ao banco.
+                {t('HOME.BANK_CAPITON')}
                 </p>
               </div>
 
-              <button onClick={handleButtonClick } type="button" className="btn">Obtenha financiamento</button>
+              <button onClick={handleButtonClick } type="button" className="btn">{t('HOME.GET_FINANCING')}</button>
             </TextContainer>
           </Column>
         </div>

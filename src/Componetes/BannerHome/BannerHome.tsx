@@ -10,6 +10,7 @@ import {
   Text,
   Btn
 } from './BannerHomeStyles.ts'; 
+import { useTranslation } from 'react-i18next';
 
 import { useNavigate } from 'react-router-dom';
 import banner from '../../assets/banner.jpg';
@@ -17,6 +18,7 @@ import banner from '../../assets/banner.jpg';
 const BannerHome = () => {
 
   const navigate = useNavigate();
+  const { t } = useTranslation(); // Certifique-se de que está correto
 
   const handleButtonClick = () => {
     navigate('/contactForm');
@@ -28,18 +30,18 @@ const BannerHome = () => {
         <div className="row align-items-center">
           <div className="col-md-6">
             <TextContainer>
-              <TextCaixa>$ Financiamento de crédito</TextCaixa>
+              <TextCaixa>{t('HOME.CREDIT_FINANCING')}</TextCaixa>
               <TextBanner>
-                Transforme o acesso ao crédito para 
+                {t('HOME.TITLE_BANNER')} 
                 <br />
-                <SpanBanner>cooperativas agrícola</SpanBanner>
+                <SpanBanner>{t('HOME.COOPERATIVE')}</SpanBanner>
               </TextBanner>
 
               <TextContainer>
                 <Text>
-                  Cadastre, simule e solicite crédito para seus cooperados sem sair da propriedade. Bancarize sua cooperativa e tenha assessoria técnica sempre que precisar, tudo direto na nossa plataforma.
+                  {t('HOME.BODY_BANNER')}
                 </Text>
-                <Btn onClick={handleButtonClick} type="button">Saiba mais</Btn>
+                <Btn onClick={handleButtonClick} type="button">{t('HOME.FIND_OUT_MORE')}</Btn>
               </TextContainer>
             </TextContainer>
           </div>

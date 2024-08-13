@@ -1,0 +1,57 @@
+{
+    "HOME": {
+        "ABOUT": "About",
+        "MANIFEST": "Manifest",
+        "TO_GO": "Sign In",
+        "START_NOW": "Start Now",
+        "CREDIT_FINANCING": "$ Credit Financing",
+        "TITLE_BANNER": "Transform access to credit for",
+        "COOPERATIVE": "agricultural cooperatives",
+        "BODY_BANNER": "Register, simulate, and request credit for your members without leaving the property. Bank your cooperative and have technical support whenever needed, all directly through our platform.",
+        "FIND_OUT_MORE": "Learn More",
+        "SERVICE_BANNER_TITLE": "We are the first credit platform,",
+        "SERVICE_BANNER_CAPTION": "made for those who recognize the value of <agriculture>family farming</agriculture>",
+        "CARDS": {
+            "SERVICE": "Fast and Personalized Service",
+            "SERVICE_CAPTION": "Personalized support in up to 5 minutes, ensuring dedicated and agile assistance to clients.",
+            "ACESSORY": "Technical support directly through the platform",
+            "ACESSORY_CAPTION": "Request technical support for your project or follow-up directly through the platform.",
+            "CREDIT": "Special credit lines for family farming",
+            "CREDIT_CAPTION": "Access to various credit lines for family farming, expanding financing options.",
+            "DIGITAL_PROCESS": "100% Digital Process",
+            "DIGIAL_PROCESS_CAPTION": "Register and request credit for your members without leaving your cooperative."
+        },
+        "RURAL_CREDIT": "Facilitate access to rural credit for your <cooperados>members</cooperados> in a <simples>simple</simples> and <eficiente>efficient</eficiente> way",
+        "RURAL_CREDIT_CAPTION": "Register, simulate, and request credit, centralizing all information and ensuring secure financial management",
+        "BANKS": "Banks that release more credit with us",
+        "CREDIT_LINES": {
+            "TITLE": "Find the ideal credit line for you",
+            "SUB_TITLE": "We offer a variety of rural credit options: from family farming to Bioeconomy, boosting productive chains",
+            "PRONAF": "Pronaf Investments",
+            "PRONAF_CAPTION": "Maximum amount up to R$30,000.00 Interest rate at an effective rate of 0.4% p.a.",
+            "PRONAF_A": "Pronaf 'A'",
+            "PRONAF_A_CAPTION": "Maximum amount up to R$40,000.00 Interest rate at an effective rate of 0.5% p.a.",
+            "PRONAF_PROGRAM": "Pronaf Special Programs",
+            "PRONAF_PROGRAM_CAPTION": "Maximum amount up to R$30,000.00 Interest rate at an effective rate of 0.4% p.a.",
+            "PRONAMP_INVESTIMENTS": "Pronamp Investments",
+            "PRONAMP_INVESTIMENTS_CAPTION": "Maximum amount up to R$30,000.00 Interest rate at an effective rate of 0.4% p.a.",
+            "PRONAMP_COSTING": "Pronamp Costing",
+            "PRONAMP_COSTING_CAPTION": "Maximum amount up to R$40,000.00 Interest rate at an effective rate of 0.5% p.a.",
+            "PRONAF_SPECIAL_PROGRAMS": "Pronaf Special Programs",
+            "PRONAF_SPECIAL_PROGRAMS_CAPTION": "Maximum amount up to R$30,000.00 Interest rate at an effective rate of 0.4% p.a."
+        },
+        "BANKARIZE": "Bank",
+        "YOUR_COOPERATIVE": "your cooperative",
+        "BANK_CAPITON": "Request and manage your members' credit directly, without needing to go to the bank.",
+        "GET_FINANCING": "Get Financing",
+        "FOOTER": {
+            "IPICRED": "IpiCred",
+            "PAGES": "Pages",
+            "HOME_PAGE": "Home Page",
+            "ABOUT_US": "About Us",
+            "GET_IN_TOUCH": "Get in Touch",
+            "WITH_SUPPORT": "With support:",
+            "FOOTER": "2024 IpiCred - Technology and Intermediation of Services Inova Simples (I.S.) CNPJ 54.231.192/0001-76. All rights reserved"
+        }
+    }
+}
