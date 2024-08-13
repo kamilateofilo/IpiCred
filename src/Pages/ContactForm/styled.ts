@@ -12,9 +12,8 @@ import styled, {css} from "styled-components";
     width: 100%;
     max-width: 600px;
     margin: 2.5rem auto;
-    padding: 1%.2;
+    padding: 1.2rem;
     border-radius: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
   
     @media (max-width: 600px) {
@@ -70,7 +69,6 @@ import styled, {css} from "styled-components";
     color: #ffffff;
     border: none;
     cursor: pointer;
-    margin: 10px auto;
   
     ${props => (props.isValid ? activeStyle : inactiveStyle)}
   

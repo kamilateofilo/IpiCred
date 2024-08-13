@@ -4,6 +4,8 @@ import ProgressBar from "../../Componetes/ProgressBar/ProgressBar";
 import { Container } from "./styled";
 import StepOne from "./CompsRelateds/Step1/StepOne";
 import { StepTwo } from "./CompsRelateds/Step2/StepTwo";
+import BackButton from "../../Componetes/BackButton/BackButton";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -36,8 +38,14 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+  const navigate = useNavigate();
+
   const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(1);
+  const prevStep = () => setStep(step - 1);
+
+  const goToHome = () => {
+    navigate('/');
+  }
 
   const handleFormDataChange = (newData: Partial<FormData>) => {
     setFormData(prevData => ({
@@ -94,9 +102,13 @@ const ContactForm = () => {
   };
 
   return (
-
       <Container>
         <Cabecalho />
+        <BackButton 
+            goToHome={goToHome}
+            goToPreviousStep={prevStep}
+            isFirstStep={step === 1}
+        />
         {step === 1 ? (
           <>
             <p style={{ marginTop: "2.1rem" }}>Etapa 1 de 2</p>

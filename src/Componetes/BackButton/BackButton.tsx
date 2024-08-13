@@ -1,21 +1,29 @@
 import ArrowLeft from "../../assets/images/arrow-left.svg";
-import { Conteiner, LeftButton, StyledLink } from "./styled.ts"
+import { Conteiner, StyledLink } from "./styled.ts";
 
-interface BackButtonPros {
-  action: () => void
+interface BackButtonProps {
+  goToHome: () => void;
+  goToPreviousStep: () => void;
+  isFirstStep: boolean;
 }
 
-const BackButton = ({ action }: BackButtonPros) => {
+const BackButton = ({goToHome, goToPreviousStep, isFirstStep }: BackButtonProps) => {
+
+  const handleClick = () => {
+    if (isFirstStep) {
+      goToHome();
+    } else {
+      goToPreviousStep();
+    }
+  }
 
   return (
     <>
       <Conteiner>
-        <LeftButton>
-          <StyledLink onClick={action}>
+          <StyledLink onClick={handleClick}>
             <img src={ArrowLeft} alt="seta voltar" /> {' '}
             Voltar
           </StyledLink>
-        </LeftButton>
       </Conteiner>
     </>
   );
