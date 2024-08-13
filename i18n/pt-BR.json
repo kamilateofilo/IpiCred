@@ -52,6 +52,14 @@
             "GET_IN_TOUCH": "Entre em contato",
             "WITH_SUPPORT": "Com apoio:",
             "FOOTER": "2024 IpiCred - Tecnologia e Intermediação de Serviços Inova Simples (I.S.) CNPJ 54.231.192/0001-76. Todos os direitos reservados"
+        },
+        "LOGIN": {
+            "TITLE": "Portal do Parceiro",
+            "SUBTITLE": "Solicite crédito para o seus cooperados de forma fácil e rápida",
+            "EMAIL": "Digite seu e-mail",
+            "PASSWORD": "Digite sua senha",
+            "FORGOT_MY_PASSWORD": "Esqueci minha senha",
+            "ENTER": "Entrar"
         }
 
     }

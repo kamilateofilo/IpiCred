@@ -52,6 +52,14 @@
             "GET_IN_TOUCH": "Get in Touch",
             "WITH_SUPPORT": "With support:",
             "FOOTER": "2024 IpiCred - Technology and Intermediation of Services Inova Simples (I.S.) CNPJ 54.231.192/0001-76. All rights reserved"
+        },
+        "LOGIN": {
+        "TITLE": "Partner Portal",
+        "SUBTITLE": "Request credit for your members easily and quickly",
+        "EMAIL": "Enter your email",
+        "PASSWORD": "Enter your password",
+        "FORGOT_MY_PASSWORD": "Forgot my password",
+        "ENTER": "Enter"
         }
     }
 }

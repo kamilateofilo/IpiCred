@@ -1,6 +1,7 @@
 import { Form, Input, Button, Conteiner, Icon, StyledLink } from "./styled";
 import { TextWrapper } from '../../Pages/ContactForm/styled';
 import { ChangeEvent, useState } from "react";
+import { useTranslation  } from 'react-i18next';
 
 import eyeIcon from "../../assets/images/eye-icon.png";
 import eyeOffIcon from "../../assets/images/eye-closed-icon.png";
@@ -21,34 +22,35 @@ export const LoginForm = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    // Exemplo: Você pode usar `password` aqui para enviar uma solicitação de login
     console.log('Senha digitada:', password);
     navigate('/HomeUsuario');
   };
+
+  const { t } = useTranslation(); 
   
   return (
     <Form>
       <Conteiner>
         <TextWrapper>
-          <h3>Portal do Parceiro</h3>
-          <p>Solicite crédito para o seus cooperados de forma fácil e rápida</p>
+          <h3>{t('HOME.LOGIN.TITLE')}</h3>
+          <p>{t('HOME.LOGIN.SUBTITLE')}</p>
         </TextWrapper>
 
         <Input 
           type="email"
-          placeholder="Digite seu e-mail"
+          placeholder={t('HOME.LOGIN.EMAIL')}
           required
         />
 
         <Input 
           type={showPassword ? 'text' : 'password'}
           onChange={handlePasswordChange}
-          placeholder="Digite sua senha"
+          placeholder={t('HOME.LOGIN.PASSWORD')}
           required
         />
 
         <StyledLink to="">
-            Esqueci minha senha
+        {t('HOME.LOGIN.FORGOT_MY_PASSWORD')}
         </StyledLink>
 
         <Icon
@@ -57,7 +59,7 @@ export const LoginForm = () => {
           onClick={togglePasswordVisibility}
         />
 
-        <Button onClick={handleButtonClick} type="submit">Entrar</Button>
+        <Button onClick={handleButtonClick} type="submit">{t('HOME.LOGIN.ENTER')}</Button>
       </Conteiner>  
     </Form>
   );

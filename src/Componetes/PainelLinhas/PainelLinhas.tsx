@@ -1,5 +1,5 @@
 import { Background, ImgAspiral, ContainerPainel, CardGrid, CardPainel } from './PainelLinhasStyles.ts'; 
-import { useTranslation,  } from 'react-i18next';
+import { useTranslation  } from 'react-i18next';
 
 import Aspiral from '../../assets/aspiral.png';
 
