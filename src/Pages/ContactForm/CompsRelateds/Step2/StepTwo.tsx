@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from 'react';
 import { Form, TextWrapper } from "../../styled";
 import { Input } from "../../../../styles/Input";
 import { Select, SelectWrapper } from "../../../../styles/Select";
 import ModalButton from "../../../../Componetes/ModalButton/ModalButton";
 import { FormData } from "../../ContactForm";
-
 
 interface StepProps {
     formData: FormData;
@@ -68,22 +67,23 @@ export const StepTwo = ({ formData, onFormDataChange, handleSubmit }: StepProps)
         const errorsTemp: { [key: string]: string } = {};
         let isValid = true;
 
-        if (touchedFields.nome_cooperativa && !formData.nome_cooperativa.trim()) {
+
+        if (!formData.nome_cooperativa.trim()) {
             errorsTemp.nome_cooperativa = validateNomeCooperativa(formData.nome_cooperativa);
             isValid = false;
         }
-        
-        if (touchedFields.numero_cooperados && !/^\d+$/.test(formData.numero_cooperados)) {
+
+        if (!/^\d+$/.test(formData.numero_cooperados) || parseInt(formData.numero_cooperados, 10) <= 0) {
             errorsTemp.numero_cooperados = validateNumeroCooperados(formData.numero_cooperados);
             isValid = false;
         }
 
-        if (touchedFields.uf && !formData.uf) {
+        if (!formData.uf) {
             errorsTemp.uf = "Estado é obrigatório.";
             isValid = false;
         }
 
-        if (touchedFields.municipio && !formData.municipio) {
+        if (!formData.municipio) {
             errorsTemp.municipio = "Município é obrigatório.";
             isValid = false;
         }
@@ -94,6 +94,13 @@ export const StepTwo = ({ formData, onFormDataChange, handleSubmit }: StepProps)
 
     const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
+
+
+        onFormDataChange({
+            ...formData,
+            [name]: value
+        });
+
 
         let error = "";
         if (name === "nome_cooperativa") {
@@ -107,22 +114,22 @@ export const StepTwo = ({ formData, onFormDataChange, handleSubmit }: StepProps)
             [name]: error
         }));
 
-        onFormDataChange({
-            ...formData,
-            [name]: value
-        });
     }, [formData, onFormDataChange]);
 
     const handleSelectChangeCombined = useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
         const { name, value } = event.target;
+
+
         onFormDataChange({
             ...formData,
             [name]: value
         });
 
+
         if (name === 'uf') {
             fetchMunicipios(value);
         }
+
     }, [formData, onFormDataChange]);
 
     const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -192,6 +199,7 @@ export const StepTwo = ({ formData, onFormDataChange, handleSubmit }: StepProps)
                 <ModalButton
                     onClick={handleSubmit || (() => {})}
                     disabled={!isFormValid}
+                    isValid={isFormValid} 
                 />
             </div>
         </>

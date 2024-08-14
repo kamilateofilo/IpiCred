@@ -6,11 +6,12 @@ import ModalImage from "../../assets/images/modal-image.png";
 
 interface ModalButtonProps {
     onClick: () => void;
-    disabled?: boolean
+    disabled?: boolean;
+    isValid?: boolean;
 }
 
 
-const ModalButton: React.FC<ModalButtonProps> = ({ onClick, disabled }) => {
+const ModalButton: React.FC<ModalButtonProps> = ({ onClick, disabled, isValid  }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -30,8 +31,9 @@ const ModalButton: React.FC<ModalButtonProps> = ({ onClick, disabled }) => {
                         handleShow();
                     }
                 }}
+                
                 disabled={disabled}
-                isValid={true}
+                isValid={isValid}
             >
                 Finalizar
             </Button>

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-interface ButtonProps {
-    disabled?: boolean;
-    isValid?: boolean;
-}
+
+const colors = {
+  active: '#AC883F', 
+  inactive: '#E4E4E4', 
+};
 
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button<{ isValid?: boolean }>`
 width: 100%;
 max-width: 250px;
 padding: 15px;
@@ -18,8 +19,14 @@ color: #ffffff;
 border: none;
 cursor: pointer;
 margin-top: 2rem;
-background-color: ${props => props.disabled ? '#E4E4E4' : (props.isValid ? '#AC883F' : '')}; 
-cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+background-color: ${({ isValid }) => (isValid ? colors.active : colors.inactive)};
+
+cursor: ${({ isValid }) => (isValid ? 'pointer' : 'not-allowed')};
+
+&:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 
 
 @media (max-width: 600px) {
