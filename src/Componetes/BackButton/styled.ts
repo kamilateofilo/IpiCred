@@ -9,9 +9,9 @@ export const Conteiner = styled.div`
 
     
     @media (max-width: 600px) {
-        top: 10%;
+        top: 7%;
         font-size: 14px;
-        color: #333;
+        color: #77787A;
     }
 `;
 
