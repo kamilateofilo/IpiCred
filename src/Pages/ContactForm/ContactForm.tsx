@@ -19,6 +19,7 @@ export interface FormData {
   numero_cooperados: string;
   uf: string;
   municipio: string;
+  checkboxes: string;
 }
 
 const ContactForm = () => {
@@ -32,7 +33,8 @@ const ContactForm = () => {
     nome_cooperativa: "",
     numero_cooperados: "",
     telefone_contato: "",
-    uf: ""
+    uf: "",
+    checkboxes: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -104,7 +106,7 @@ const ContactForm = () => {
   return (
       <Container>
         <Cabecalho />
-        <BackButton 
+        <BackButton
             goToHome={goToHome}
             goToPreviousStep={prevStep}
             isFirstStep={step === 1}

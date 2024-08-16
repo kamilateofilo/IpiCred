@@ -12,10 +12,10 @@ export const Select = styled.select`
   width: 100%;
   height: 50px;
   cursor: pointer;
-`
+`;
 
-export const SelectWrapper = styled.div` 
+export const SelectWrapper = styled.div`
    display: flex;
    justify-content: space-between;
    gap: 20px;
-`
+`;
