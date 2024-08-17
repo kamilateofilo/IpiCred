@@ -4,6 +4,7 @@ import { Button, Form, TextWrapper } from "../../styled";
 import { Input } from "../../../../styles/Input";
 import { SelectWrapper, SelectButton, CustomCheckboxContainer, CustomCheckbox } from "../../../../styles/MultiSelect";
 
+
 interface StepProps {
     formData: FormData;
     onFormDataChange: (data: Partial<FormData>) => void;
@@ -42,7 +43,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
 
     const validateField = (name: keyof FormData, value: string) => {
         let error = '';
-
+    
         switch (name) {
             case 'nome_completo':
                 if (!value.trim()) error = 'Nome completo é obrigatório.';
@@ -53,7 +54,11 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
             case 'telefone_contato':
                 // eslint-disable-next-line no-case-declarations
                 const cleaned = value.replace(/\D/g, '');
-                if (!cleaned || !/^\d{11}$/.test(cleaned)) error = 'Telefone inválido. Deve estar no formato (XX)XXXXX-XXXX.';
+                if (cleaned.length < 10 || cleaned.length > 11) {
+                    error = 'Telefone inválido. Deve ter 10 ou 11 dígitos.';
+                } else if (!/^\d{10,11}$/.test(cleaned)) {
+                    error = 'Telefone inválido. Deve estar no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.';
+                }
                 break;
             case 'cargo':
                 if (!value.trim()) error = 'Cargo é obrigatório.';
@@ -64,14 +69,38 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
             default:
                 break;
         }
-
+    
         return error;
     };
-
+    
+    const formatPhoneNumber = (value: string) => {
+        const cleaned = value.replace(/\D/g, '');
+        let formatted = '';
+    
+        if (cleaned.length <= 2) {
+            formatted = `(${cleaned}`;
+        } else if (cleaned.length <= 5) {
+            formatted = `(${cleaned.slice(0, 2)})${cleaned.slice(2)}`;
+        } else if (cleaned.length <= 9) {
+            formatted = `(${cleaned.slice(0, 2)})${cleaned.slice(2, 7)}-${cleaned.slice(7)}`;
+        } else {
+            formatted = `(${cleaned.slice(0, 2)})${cleaned.slice(2, 7)}-${cleaned.slice(7, 11)}`;
+        }
+    
+        return formatted;
+    };
+    
+    
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value, type, checked } = e.target as HTMLInputElement;
-
-        if (type === 'checkbox') {
+    
+        if (name === 'telefone_contato') {
+            const formattedValue = formatPhoneNumber(value);
+            onFormDataChange({
+                ...formData,
+                [name]: formattedValue
+            });
+        } else if (type === 'checkbox') {
             const updatedOptions = new Set(selectedOptions);
             if (checked) {
                 updatedOptions.add(value);
@@ -79,7 +108,6 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
                 updatedOptions.delete(value);
             }
             setSelectedOptions(updatedOptions);
-
             onFormDataChange({
                 ...formData,
                 atividade_cooperativa: Array.from(updatedOptions).join(', ')
@@ -90,9 +118,11 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
                 [name]: value
             });
         }
-
+    
         setTouchedFields(prev => new Set(prev.add(name)));
     };
+    
+    
 
     const validateAllFields = () => {
         const errors = Object.keys(formData).reduce((acc, key) => {
@@ -177,7 +207,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
                     )}
 
                     <Input
-                        type="tel"
+                        type="text"
                         placeholder='Telefone para contato'
                         name='telefone_contato'
                         value={formData.telefone_contato}

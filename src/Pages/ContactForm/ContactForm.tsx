@@ -25,7 +25,7 @@ export interface FormData {
 const ContactForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
-    atividade_cooperativa: "",
+    atividade_cooperativa: '',
     cargo: "",
     email: "",
     municipio: "",
