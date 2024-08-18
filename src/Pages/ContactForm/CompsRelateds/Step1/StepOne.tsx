@@ -4,7 +4,6 @@ import { Button, Form, TextWrapper } from "../../styled";
 import { Input } from "../../../../styles/Input";
 import { SelectWrapper, SelectButton, CustomCheckboxContainer, CustomCheckbox } from "../../../../styles/MultiSelect";
 
-
 interface StepProps {
     formData: FormData;
     onFormDataChange: (data: Partial<FormData>) => void;
@@ -37,34 +36,35 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
 
     useEffect(() => {
         if (formData.atividade_cooperativa) {
-            setSelectedOptions(new Set(formData.atividade_cooperativa.split(', ').filter(Boolean)));
+            setSelectedOptions(new Set(formData.atividade_cooperativa));
         }
     }, [formData.atividade_cooperativa]);
 
-    const validateField = (name: keyof FormData, value: string) => {
+    const validateField = (name: keyof FormData, value: string | string[]) => {
         let error = '';
     
         switch (name) {
             case 'nome_completo':
-                if (!value.trim()) error = 'Nome completo é obrigatório.';
+                if (typeof value === 'string' && !value.trim()) error = 'Nome completo é obrigatório.';
                 break;
             case 'email':
-                if (!value || !/\S+@\S+\.\S+/.test(value)) error = 'E-mail inválido. Deve estar no formato exemplo@gmail.com';
+                if (typeof value === 'string' && (!value || !/\S+@\S+\.\S+/.test(value))) error = 'E-mail inválido. Deve estar no formato exemplo@gmail.com';
                 break;
             case 'telefone_contato':
-                // eslint-disable-next-line no-case-declarations
-                const cleaned = value.replace(/\D/g, '');
-                if (cleaned.length < 10 || cleaned.length > 11) {
-                    error = 'Telefone inválido. Deve ter 10 ou 11 dígitos.';
-                } else if (!/^\d{10,11}$/.test(cleaned)) {
-                    error = 'Telefone inválido. Deve estar no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.';
+                if (typeof value === 'string') {
+                    const cleaned = value.replace(/\D/g, '');
+                    if (cleaned.length < 10 || cleaned.length > 11) {
+                        error = 'Telefone inválido. Deve ter 10 ou 11 dígitos.';
+                    } else if (!/^\d{10,11}$/.test(cleaned)) {
+                        error = 'Telefone inválido. Deve estar no formato (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.';
+                    }
                 }
                 break;
             case 'cargo':
-                if (!value.trim()) error = 'Cargo é obrigatório.';
+                if (typeof value === 'string' && !value.trim()) error = 'Cargo é obrigatório.';
                 break;
             case 'atividade_cooperativa':
-                if (selectedOptions.size === 0) error = 'Pelo menos uma opção deve ser selecionada.';
+                if (Array.isArray(value) && value.length === 0) error = 'Pelo menos uma opção deve ser selecionada.';
                 break;
             default:
                 break;
@@ -73,6 +73,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
         return error;
     };
     
+
     const formatPhoneNumber = (value: string) => {
         const cleaned = value.replace(/\D/g, '');
         let formatted = '';
@@ -89,10 +90,9 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
     
         return formatted;
     };
-    
-    
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value, type, checked } = e.target as HTMLInputElement;
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value, checked } = e.target;
     
         if (name === 'telefone_contato') {
             const formattedValue = formatPhoneNumber(value);
@@ -100,7 +100,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
                 ...formData,
                 [name]: formattedValue
             });
-        } else if (type === 'checkbox') {
+        } else if (name === 'atividade_cooperativa') {
             const updatedOptions = new Set(selectedOptions);
             if (checked) {
                 updatedOptions.add(value);
@@ -110,7 +110,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
             setSelectedOptions(updatedOptions);
             onFormDataChange({
                 ...formData,
-                atividade_cooperativa: Array.from(updatedOptions).join(', ')
+                atividade_cooperativa: Array.from(updatedOptions)
             });
         } else {
             onFormDataChange({
@@ -121,17 +121,15 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
     
         setTouchedFields(prev => new Set(prev.add(name)));
     };
-    
-    
 
     const validateAllFields = () => {
         const errors = Object.keys(formData).reduce((acc, key) => {
             const typedKey = key as keyof FormData;
-            const error = validateField(typedKey, formData[typedKey]);
+            const value = formData[typedKey];
+            const error = validateField(typedKey, value as string | string[]);
             if (error) acc[typedKey] = error;
             return acc;
         }, {} as Record<keyof FormData, string>);
-
 
         if (selectedOptions.size === 0) {
             errors.atividade_cooperativa = 'Pelo menos uma opção deve ser selecionada.';
@@ -245,6 +243,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
                     {touchedFields.has('atividade_cooperativa') && formErrors.atividade_cooperativa && (
                         <p style={{ color: 'red' }}>{formErrors.atividade_cooperativa}</p>
                     )}
+
 
                     <Input
                         type="text"

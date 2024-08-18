@@ -14,7 +14,7 @@ export interface FormData {
   email: string;
   telefone_contato: string;
   cargo: string;
-  atividade_cooperativa: string;
+  atividade_cooperativa: string[];
   nome_cooperativa: string;
   numero_cooperados: string;
   uf: string;
@@ -22,10 +22,12 @@ export interface FormData {
   checkboxes: string;
 }
 
+
+
 const ContactForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
-    atividade_cooperativa: '',
+    atividade_cooperativa: [],
     cargo: "",
     email: "",
     municipio: "",
@@ -39,9 +41,7 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-
   const navigate = useNavigate();
-
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
@@ -88,11 +88,9 @@ const ContactForm = () => {
 
       console.log("eee response", response.status !== 201)
 
-
       if (response.status !== 201) {
         console.log("post está sendo feito", response)
       }
-
 
       return
 
