@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
+
+
 export const Form = styled.form`
   position: relative;
   display: flex;
@@ -29,14 +31,14 @@ export const Conteiner = styled.div`
 `;
 
 export const Input = styled.input`
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border-radius: 50px;
   border: 1px solid #79747E;
-  color: #232528;
+  color: #49454F;
   font-size: 16px;
   font-weight: 400;
   outline: none;
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
   height: 50px;
 
   &::placeholder {
@@ -52,11 +54,36 @@ export const Input = styled.input`
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
     height: 40px;
     padding: 8px;
+
+    &::placeholder {
+      font-size: 15px;
+    }
   }
 `;
+
+
+
+export const InputWrapper = styled.div`
+     position: relative;
+     display: block;
+`; 
+
+export const Icon = styled.img`
+  position: absolute;
+  top: 36%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    top: 32%;
+    right: 7px;
+  }
+`;
+
 
 export const StyledLink = styled(Link)`
   color: #AC883F;
@@ -69,32 +96,35 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const Icon = styled.img`
-  position: absolute;
-  top: 70%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
 
-  @media (max-width: 768px) {
-    top: 73%;
-    right: 5px;
-  }
-`;
-
-export const Button = styled.button`
+export const Button = styled.button<{ disabled: boolean }>`
+  background-color: ${props => props.disabled ? '#d3d3d3' : '#AC883F'};
+  color: white;
+  border: none;
   width: 100%;
   padding: 10px;
-  background-color: #E4E4E4;
-  color: #ffffff;
   margin-top: 2em;
   border: none;
   border-radius: 50px;
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 1rem;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+
+
+   @media (max-width: 768px) {
+     font-size: 16px;
+     padding: 8px;
+   }
+`;
+
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 15px;
+  top: 10px;
 
   @media (max-width: 768px) {
-    font-size: 14px;
-    padding: 8px;
+     font-weight: 500;
+     font-size: 15px;
   }
 `;
+
