@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Card = styled.div`
@@ -35,7 +36,19 @@ export const CardText = styled.p`
   margin-bottom: 20px;
 `;
 
-export const Button = styled.a`
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  outline: none;
+  padding: 10px 20px;
+
+  
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const StyledButton = styled.a`
   background-color: #AC883F;
   color: white;
   padding: 10px 20px;

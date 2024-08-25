@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AreaCooperado from '../Pages/AreaCooperado/AreaCooperado';
 import Propostas from '../Pages/Propostas/Propostas';
 import ContactForm from '../Pages/ContactForm/ContactForm';
+import PreAnaliseCredito from '../Pages/PreAnaliseCredito/PreAnaliseCredito';
+import { DadosSolicitante } from '../Pages/DadosSolicitante/DadosSolicitante';
+import { DadosEnviados } from '../Pages/DadosEnviados/DadosEnviados';
 
 
 export const AppRoutes = () => {
@@ -18,6 +21,9 @@ export const AppRoutes = () => {
                 <Route path="/homeUsuario" element={<HomeUsuario />} />
                 <Route path="/AreaCooperado" element={<AreaCooperado />} />
                 <Route path="/Propostas" element={<Propostas />} />
+                <Route path="/preAnaliseCredito" element={<PreAnaliseCredito />} />
+                <Route path="/dadosSolicitante" element={<DadosSolicitante />} />
+                <Route path="/dataSent" element={<DadosEnviados/>} />
           </Routes>
       );
 };

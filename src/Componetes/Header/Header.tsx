@@ -23,11 +23,11 @@ const Header = () => {
       case '/Propostas':
         setActiveLink('Propostas');
         break;
-      case '/simulador':
-        setActiveLink('Simulador');
-        break;
-      default:
-        setActiveLink('');
+      // case '/simulador':
+      //   setActiveLink('Simulador');
+      //   break;
+      // default:
+      //   setActiveLink('');
     }
   }, [location.pathname]);
 
@@ -67,13 +67,13 @@ const Header = () => {
             >
               Propostas
             </Button>
-            <Button
+            {/* <Button
               variant="light"
               className={activeLink === 'Simulador' ? 'active' : ''}
               onClick={() => handleNavClick('/simulador', 'Simulador')}
             >
               Simulador
-            </Button>
+            </Button> */}
           </Nav>
           <NavDropdown
             title={
