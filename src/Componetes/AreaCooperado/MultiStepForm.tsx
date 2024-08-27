@@ -25,12 +25,12 @@ const MultiStepForm: React.FC = () => {
   return (
     <div className="form-container container mt-4">
       <div className="step-count mb-1">
-        Etapa {step} de 8
+        Etapa {step} de 5
       </div>
       <div className="progress-bar mb-3">
         <div
           className="progress"
-          style={{ width: `${(step / 8) * 100}%` }}
+          style={{ width: `${(step / 5) * 100}%` }}
         />
       </div>
       
