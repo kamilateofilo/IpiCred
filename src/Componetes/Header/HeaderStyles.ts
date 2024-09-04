@@ -40,11 +40,17 @@ export const StyledNavbar = styled(Navbar)`
   .dropdown-menu {
     background-color: #FFF;
     border-radius: 10px;
+    text-decoration: none;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border: none;
 
     .dropdown-item {
       color: #5F4B23;
+
+      &:hover {
+        text-decoration: none;
+        background-color: #fff;
+      }
     }
   }
 `;

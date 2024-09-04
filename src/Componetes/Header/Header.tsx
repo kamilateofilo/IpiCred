@@ -23,11 +23,6 @@ const Header = () => {
       case '/Propostas':
         setActiveLink('Propostas');
         break;
-      // case '/simulador':
-      //   setActiveLink('Simulador');
-      //   break;
-      // default:
-      //   setActiveLink('');
     }
   }, [location.pathname]);
 
@@ -67,13 +62,6 @@ const Header = () => {
             >
               Propostas
             </Button>
-            {/* <Button
-              variant="light"
-              className={activeLink === 'Simulador' ? 'active' : ''}
-              onClick={() => handleNavClick('/simulador', 'Simulador')}
-            >
-              Simulador
-            </Button> */}
           </Nav>
           <NavDropdown
             title={
@@ -85,7 +73,7 @@ const Header = () => {
             id="basic-nav-dropdown"
             className="ms-auto"
           >
-            <NavDropdown.Item href="#">Sair</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => handleNavClick('/', 'home')}>Sair</NavDropdown.Item>
           </NavDropdown>
         </Navbar.Collapse>
       </Container>
