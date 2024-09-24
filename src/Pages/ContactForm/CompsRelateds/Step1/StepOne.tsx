@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FormData } from "../../ContactForm";
-import { Button, Form, TextWrapper } from "../../styled";
+import { Button, Form, TextWrapper, Wrapper } from "../../styled";
 import { Input } from "../../../../styles/Input";
 import { SelectWrapper, SelectButton, CustomCheckboxContainer, CustomCheckbox } from "../../../../styles/MultiSelect";
+import { Link } from 'react-router-dom';
 
 interface StepProps {
     formData: FormData;
@@ -32,6 +33,7 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
     const [touchedFields, setTouchedFields] = useState<Set<string>>(new Set());
     const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set());
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+    const [isPrivacyChecked, setIsPrivacyChecked] = useState<boolean>(false); 
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -112,7 +114,9 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
                 ...formData,
                 atividade_cooperativa: Array.from(updatedOptions)
             });
-        } else {
+        } else if(name === 'privacy_check'){
+            setIsPrivacyChecked(checked);
+        }else{
             onFormDataChange({
                 ...formData,
                 [name]: value
@@ -136,13 +140,13 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
         }
 
         setFormErrors(errors);
-        setIsFormValid(Object.keys(errors).length === 0);
+        setIsFormValid(Object.keys(errors).length === 0 && isPrivacyChecked);
     };
 
     useEffect(() => {
         validateAllFields();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [formData, selectedOptions]);
+    }, [formData, selectedOptions, isPrivacyChecked]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -258,8 +262,19 @@ export const StepOne = ({ formData, onFormDataChange, nextStep, isSubmitting }: 
                         <p style={{ color: 'red' }}>{formErrors.cargo}</p>
                     )}
 
-                    <p>Ao continuar, esteja ciente da <a href="#">política de privacidade</a> da IpiCred</p>
-
+                    <Wrapper>
+                        <input 
+                        type="checkbox" 
+                        name="privacy_check"
+                        checked={isPrivacyChecked}
+                        onChange={handleChange}
+                        />
+                        <p>Ao continuar, esteja ciente da <Link to="/PoliticaDePrivacidade">política de privacidade</Link> da IpiCred</p>
+                    </Wrapper>
+                    {touchedFields.has('privacy_check') && formErrors.privacy_check && (
+                        <p style={{ color: 'red' }}>{formErrors.privacy_check}</p>
+                    )}
+                   
                     <Button
                         isValid={isFormValid}
                         type="button"

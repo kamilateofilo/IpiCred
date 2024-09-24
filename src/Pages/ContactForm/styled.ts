@@ -25,12 +25,6 @@ import styled, {css} from "styled-components";
     display: flex;
     flex-direction: column;
     gap: 17px;
-  
-    > p, a {
-      color: #79747E;
-      font-size: 16px;
-      font-weight: 400;
-    }
   `;
   
   export const TextWrapper = styled.div`
@@ -74,6 +68,26 @@ import styled, {css} from "styled-components";
   
     @media (max-width: 600px) {
       max-width: 100%;
+    }
+  `;
+
+  export const Wrapper = styled.div`
+    display: flex;
+    align-items: center;
+    
+
+    > p, a {
+      color: #79747E;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    > p {
+      margin: 10px;
+    }
+
+    > input {
+      cursor: pointer;
     }
   `;
   

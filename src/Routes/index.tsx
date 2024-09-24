@@ -11,6 +11,7 @@ import PreAnaliseCredito from '../Pages/PreAnaliseCredito/PreAnaliseCredito';
 import { DadosSolicitante } from '../Pages/DadosSolicitante/DadosSolicitante';
 import { DadosEnviados } from '../Pages/DadosEnviados/DadosEnviados';
 import MultiStepForm from '../Componetes/AreaCooperado/MultiStepForm';
+import { PoliticaDePrivacidade } from '../Pages/PoliticaDePrivacidade/PoliticaDePrivacidade';
 
 
 export const AppRoutes = () => {
@@ -26,6 +27,7 @@ export const AppRoutes = () => {
                 <Route path="/dadosSolicitante" element={<DadosSolicitante />} />
                 <Route path="/dataSent" element={<DadosEnviados/>} />
                 <Route path="/multistepForm" element={<MultiStepForm />} />
+                <Route path="/politicaDePrivacidade" element={<PoliticaDePrivacidade />} />
           </Routes>
       );
 };
