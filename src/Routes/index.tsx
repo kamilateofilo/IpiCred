@@ -12,6 +12,10 @@ import { DadosSolicitante } from '../Pages/DadosSolicitante/DadosSolicitante';
 import { DadosEnviados } from '../Pages/DadosEnviados/DadosEnviados';
 import MultiStepForm from '../Componetes/AreaCooperado/MultiStepForm';
 import { PoliticaDePrivacidade } from '../Pages/PoliticaDePrivacidade/PoliticaDePrivacidade';
+import { EsqueceuSenha } from '../Pages/EsqueceuSenha/EsqueceuSenha';
+import { VerificarCodigo } from '../Pages/VerificarCodigo/VerificarCodigo';
+import { NovaSenha } from '../Pages/NovaSenha/NovaSenha';
+import { SenhaAlteradaSucesso } from '../Pages/SenhaAlteradaSucesso/SenhaAlteradaSucesso';
 
 
 export const AppRoutes = () => {
@@ -28,6 +32,11 @@ export const AppRoutes = () => {
                 <Route path="/dataSent" element={<DadosEnviados/>} />
                 <Route path="/multistepForm" element={<MultiStepForm />} />
                 <Route path="/politicaDePrivacidade" element={<PoliticaDePrivacidade />} />
+                <Route path="/esqueceuSenha" element={<EsqueceuSenha />} />
+                <Route path="/esqueceuSenha" element={<EsqueceuSenha />} />
+                <Route path="/verificarCodigo" element={<VerificarCodigo/>} />
+                <Route path="/novaSenha" element={<NovaSenha/>} />
+                <Route path="/senhaAlteradaSucesso" element={<SenhaAlteradaSucesso/>} />
           </Routes>
       );
 };

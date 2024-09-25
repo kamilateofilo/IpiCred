@@ -9,7 +9,7 @@ export const Conteiner = styled.div`
 
     
     @media (max-width: 600px) {
-        top: 7%;
+        margin-bottom: 3rem;
         font-size: 14px;
         color: #77787A;
     }

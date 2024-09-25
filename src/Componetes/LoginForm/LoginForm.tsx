@@ -148,7 +148,7 @@ export const LoginForm = () => {
           />
         </InputWrapper>
 
-        <StyledLink to="">
+        <StyledLink to="/EsqueceuSenha">
           {t('HOME.LOGIN.FORGOT_MY_PASSWORD')}
         </StyledLink>
 
